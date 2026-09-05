@@ -1,0 +1,428 @@
+BEGIN:VCALENDAR
+X-PUBLISHED-TTL:PT15M
+REFRESH-INTERVAL;VALUE=DURATION:PT15M
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:adamgibbons/ics
+METHOD:PUBLISH
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:3F95i4fYtiqi7nJQCY3ZW
+SUMMARY:[Akce] Třídnická hodina
+DTSTAMP:20260903T140804Z
+DTSTART:20260901T060000Z
+DESCRIPTION:Vyučující: Bacílek K.\, Balák J.\, Beránek K.\, Brettschneidero
+	vá Z.\, Cimrhaklová L.\, Červená V.\, Dobrovolný T.\, Endal D.\, Fialová s
+	t. D.\, Fletterová Horová M.\, Gubran Š.\, Halová D.\, Hrachová H.\, Hůdov
+	á I.\, Humeníková E.\, Illingerová H.\, Jandová Z.\, Jirásková J.\, Jirkov
+	á D.\, Jurčík O.\, Kopecká K.\, Kovandová  K.\, Kuklová D.\, Marková S.\, 
+	Matějková B.\, Mikulová G.\, Mondek J.\, Müller Z.\, Ogorková K.\, Petrík 
+	R.\, Plaňanská S.\, Procházka P.\, Růžička J.\, Skořepa V.\, Sobotka J.\, 
+	Speierlová R.\, Straka M.\, Strapková J.\, Štádler M.\, Tatarová  S.\, Tře
+	šková J.\, Tučák V.\, Učíková P.\, Valinová H.\, Vančurová J.\, Wunderlich
+	 R.\nSkupina: 1.AGP (celá třída)\, 1.CUK-REZ (celá třída)\, 1.DRV-ZPR (cel
+	á třída)\, 1.ELM (celá třída)\, 1.EP (celá třída)\, 1.INS (celá třída)\, 1
+	.IT (celá třída)\, 1.KAD (celá třída)\, 1.MOV (celá třída)\, 1.OZS (celá t
+	řída)\, 1.ME (celá třída)\, 1.PO (celá třída)\, 1.PRO (celá třída)\, 1.ST 
+	(celá třída)\, 1.STP-POV (celá třída)\, 1.TRU (celá třída)\, 1.USH (celá t
+	řída)\, 1.ZAH-ZFA (celá třída)\, 2.AGP (celá třída)\, 2.CUK-REZ (celá tříd
+	a)\, 2.DRV-ZPR (celá třída)\, 2.ELM (celá třída)\, 2.EP (celá třída)\, 2.I
+	NS (celá třída)\, 2.ITA (celá třída)\, 2.ITB-ST (celá třída)\, 2.KAD (celá
+	 třída)\, 2.ME-USH (celá třída)\, 2.MOV (celá třída)\, 2.OZS (celá třída)\
+	, 2.PRO (celá třída)\, 2.STP-POV (celá třída)\, 2.TRU (celá třída)\, 2.ZAH
+	-ZFA (celá třída)\, 3.AGP (celá třída)\, 3.CUK-REZ (celá třída)\, 3.DRV-ZP
+	R (celá třída)\, 3.ELM (celá třída)\, 3.EP-ST (celá třída)\, 3.INS (celá t
+	řída)\, 3.IT (celá třída)\, 3.KAD (celá třída)\, 3.ME-USH (celá třída)\, 3
+	.MOV (celá třída)\, 3.OZS (celá třída)\, 3.PRO (celá třída)\, 3.STP-POV (c
+	elá třída)\, 3.TRU (celá třída)\, 3.ZAH-ZFA (celá třída)\, 4.AGP (celá tří
+	da)\, 4.EP (celá třída)\, 4.IT (celá třída)\, 4.ME (celá třída)\, 4.ST (ce
+	lá třída)\, 4.USH (celá třída)\nUčivo: Zahájení školního roku 2026/2027\; 
+	Zahájení školního roku 2026/2027\; Třídnická hodina\; Třídnická hodina\, z
+	ahájení školního roku\; Třídnická hodina\; Třídnická hodina - Zahájení ško
+	lního roku 2026/2027\; Zahájení školního roku 2026-2027\; Třídnická hodina
+	\; Zahájení školního roku 2026/2027\; Třídnická hodina\; Třídnická hodina\
+	; Zahájení školního roku 2026/2027\; Zahájení školního roku 2026/2027\; Tř
+	ídnická hodina\; Zahájení školního roku 2026/2027.\; Třídnická hodina - Za
+	hájení školního roku 2026/2027\; Zahájení školního roku 2026/2027\; Zaháje
+	ní školního roku 2026/2027\; Zahájení školního roku 2026/2027.\; Třídnická
+	 hodina\; Zahájení školního roku 2026/2027\; Třídnická hodina - Zahájení š
+	kolního roku 2026/2027\; Zahájení školního roku 2026/2027\; Zahájení školn
+	ího roku 2026/27\; Zahájení školního roku 2026/2027\; Třídnická hodina Zah
+	ájení školního roku 2026/2027\; Zahájení školního roku 2026/2027\; Třídnic
+	ká hodina - zahájení školního roku 2026/2027\; Třídnická hodina\; Zahájení
+	 školního roku 2026/2027\; Zahájení školního roku 2026/2027\; Třídnická ho
+	dina\; Zahájení školnhío roku 2026/2027\; Zahájení školního roku 2026/2027
+	\; Zahájení školnhío roku 2026/2027\; Zahájení školního roku 2026/27\; Zah
+	ájení školního roku 2026/2027\; Třídnická hodina - organizační pokyny k za
+	hájení školního roku\; Třídnická hodina\; Třídnická hodina-Zahájení školní
+	ho roku 2026/2027\; Třídnická hodina-Zahájení školního roku 2026/2027\; Za
+	hájení školního roku2026/2027\; Zahájení školního roku 2026/2027\; Zahájen
+	í školního roku 2026/2027\; Třídnická hodina\; Zahájení školního roku 2026
+	/2027\; Zahájení školního roku 2026/2027\; Zahájení školního roku 2026/27\
+	; Zahájení školního roku 2026/27\; Třídnická hodina - Zahájení školního ro
+	ku 2026/2027\; Zahájení školního roku 2026/2027.\; Třídnická hodina\; Zahá
+	jení školního roku 2026/2027\; Třídnická hodina - zahájení školního roku\n
+	Poznámka: Zahájení školního roku 2026/2027.\; Žáci byli poučeni o přecháze
+	ní koridorem u školy Komenského\, byly rozdány dokumenty k podpisu\, byly 
+	rozdány potvrzení o studiu\; Zahájení školního roku 2026 - 2027\; Zahájení
+	 školního roku 2026/2027\; Rozdané tiskopisy k vyplnění - GDPR\, OPL\, omo
+	uvání\, školní matrika\, rodičáky\, srpš -200\,-\; Zahájení školního roku 
+	2026/2027\; Zahájení školního roku 2025/2026\; Žáci byli poučeni o přecház
+	ení koridorem u školy Komenského\, byly rozdány dokumenty k podpisu\, byly
+	 rozdány potvrzení o studiu
+CATEGORIES:AKCE
+COLOR:mediumpurple
+DURATION:PT45M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eDfcV9qebXP41zCkn0FJ2
+SUMMARY:[Změna] ČJL (Český jazyk a literatura)
+DTSTAMP:20260903T140804Z
+DTSTART:20260901T065500Z
+DESCRIPTION:Vyučující: Kovandová  K.\nSkupina: 1.IT (celá třída)
+LOCATION:M2.36
+CATEGORIES:SUPLOVANI
+COLOR:tomato
+DURATION:PT45M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:Gm3jE9tHQXTrg5KizenID
+SUMMARY:[Změna] IKT (Informační a komunikační technologie)
+DTSTAMP:20260903T140804Z
+DTSTART:20260901T075000Z
+DESCRIPTION:Vyučující: Jirásková J.\nSkupina: 1.IT (IKT2)
+LOCATION:K1.12
+CATEGORIES:SUPLOVANI
+COLOR:tomato
+DURATION:PT110M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:M_IDjXPNy1-AN1PBCN6q6
+SUMMARY:[Změna] HRW (Hardware)
+DTSTAMP:20260903T140804Z
+DTSTART:20260901T095000Z
+DESCRIPTION:Vyučující: Rochel P.\nSkupina: 1.IT (celá třída)
+LOCATION:K1
+CATEGORIES:SUPLOVANI
+COLOR:tomato
+DURATION:PT100M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:R2CRI0uj1tYQBLdo64Hni
+SUMMARY:[Změna] APS (Aplikační software)
+DTSTAMP:20260903T140804Z
+DTSTART:20260901T060000Z
+DESCRIPTION:Vyučující: Procházka P.\nSkupina: 1.IT (celá třída)
+LOCATION:H303
+CATEGORIES:SUPLOVANI
+COLOR:tomato
+DURATION:PT45M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:HPB-uxAwooqYWbmWPjlCy
+SUMMARY:[Akce] Třídnické hodiny
+DTSTAMP:20260903T140804Z
+DTSTART:20260902T060000Z
+DESCRIPTION:Vyučující: Bacílek K.\, Balák J.\, Beránek K.\, Červená V.\, Do
+	brovolný T.\, Endal D.\, Fialová st. D.\, Gubran Š.\, Halová D.\, Hrachová
+	 H.\, Hůdová I.\, Humeníková E.\, Illingerová H.\, Jirásková J.\, Jirková 
+	D.\, Jurčík O.\, Kopecká K.\, Kovandová  K.\, Kubínová A.\, Kuklová D.\, M
+	arková S.\, Mikulová G.\, Mondek J.\, Müller Z.\, Ogorková K.\, Petrík R.\
+	, Plaňanská S.\, Procházka P.\, Růžička J.\, Sobotka J.\, Straka M.\, Stra
+	pková J.\, Štádler M.\, Tatarová  S.\, Třešková J.\, Učíková P.\, Vančurov
+	á J.\, Wunderlich R.\nSkupina: 1.AGP (celá třída)\, 1.CUK-REZ (celá třída)
+	\, 1.DRV-ZPR (celá třída)\, 1.ELM (celá třída)\, 1.EP (celá třída)\, 1.INS
+	 (celá třída)\, 1.IT (celá třída)\, 1.KAD (celá třída)\, 1.MOV (celá třída
+	)\, 1.OZS (celá třída)\, 1.ME (celá třída)\, 1.PO (celá třída)\, 1.PRO (ce
+	lá třída)\, 1.ST (celá třída)\, 1.STP-POV (celá třída)\, 1.TRU (celá třída
+	)\, 1.USH (celá třída)\, 1.ZAH-ZFA (celá třída)\, 2.AGP (celá třída)\, 2.C
+	UK-REZ (celá třída)\, 2.EP (celá třída)\, 2.INS (celá třída)\, 2.ITA (celá
+	 třída)\, 2.ITB-ST (celá třída)\, 2.ME-USH (celá třída)\, 2.MOV (celá tříd
+	a)\, 2.PRO (celá třída)\, 2.TRU (celá třída)\, 2.ZAH-ZFA (celá třída)\, 3.
+	AGP (celá třída)\, 3.DRV-ZPR (celá třída)\, 3.ELM (celá třída)\, 3.EP-ST (
+	celá třída)\, 3.IT (celá třída)\, 3.KAD (celá třída)\, 3.OZS (celá třída)\
+	, 4.AGP (celá třída)\, 4.EP (celá třída)\, 4.IT (celá třída)\, 4.ME (celá 
+	třída)\, 4.ST (celá třída)\, 4.USH (celá třída)\nUčivo: Třídnické hodiny-„
+	Školní řád\, organizace šk. roku 2026/2027”\; Třídnické hodiny - Školní řá
+	d\, organizace školního roku 2026/2027\; Školní řád\, organizace školního 
+	roku 2026/2027\; Třídnické hodiny\; Školní řád\, organizace šk. roku 2026/
+	2027\; Třídnické hodiny\; Školní řád\, organizace šk. roku 2026/2027\; Ško
+	lní řád\, organizace školního roku 2026/2027\; Školní řád\, organizace šk.
+	 roku 2026/2027\; Třídnické hodiny - Školní řád\, organizace školního roku
+	 2026/2027\; Třídnické hodiny\; Školní řád\, organizace školního roku 2026
+	/2027.\; Školní řád\, organizace šk.roku 2026/2027\; Školní řád\, organiza
+	ce šk. roku 2026/2027\; Třídnické hodiny - Školní řád\, organizace školníh
+	o roku 2026/2027\; Školní řád\, organizace šk. roku 2026/2027\; Školní řád
+	\, organizace šk. roku 2026/27\; Třídnické hodiny\; Třídnické hodiny ŠKOLN
+	Í ŘÁD\, ORGANIZACE ŠKOL. ŠK. ROKU 2026/2027\; Školní řád\, organizace šk. 
+	roku 2026/2027\; Třídnické hodiny\; Třídnické hodiny\; Školní řád\, organi
+	zace školního roku 26/27\,\; Třídnické hodiny\; Školní řád \, organizace š
+	kolního roku 2026/2027\; Školní řád\, organizace šk. roku 2026/2027\; Škol
+	ní řád\, organizace šk. roku 2026/2027\; Školní řád\, organizace šk. roku 
+	2026/27\; Třídnické hodiny - organizační záležitosti  na konci školního ro
+	ku\; Třídnické hodiny\; Třídnické hodiny-školní řád a organizace školního 
+	roku 2026/2027\; Školní řád\, organizace školní roku 2026/2027\; Třídnické
+	 hodiny-školní řád\, organizace školního roku 2026/2027\; Školní řád\, org
+	anizace šk. roku 2026/27\; Školní řád\, organizace šk. roku 2026/27\; Tříd
+	nické hodiny - Školní řád\, organizace šk.roku 2026/2027\; Školní řád\, or
+	ganizace šk. roku 2026/2027”.\; Zahájení školního roku 2026/2027\; Školní 
+	řád\, organizace školní roku 2026/2027\; Třídnické hodiny\nPoznámka: ”Žáci
+	 byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni 
+	o BOZP a PO”\; Žáci byli seznámeni se Školním řádem pro školní rok 2026/20
+	27 a řádně poučeni o BOZP a PO\; Žáci byli seznámeni se Školním řádem pro 
+	školní rok 2026/2027 a řádně poučeni o BOZP a PO.\; Žáci byli seznámeni se
+	 Školním řádem  pro školní rok 2026/2027 a řádně poučeni o BOZP a PO\; Žác
+	i byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni
+	 o BOZP a PO\; Žáci byli seznámeni se Školním řádem pro školní rok 2026/20
+	27 a řádně poučeni o BOZP a PO\; Žáci byli seznámeni se Školním řádem pro 
+	školní rok 2026/2027 a řádně poučeni o BOZP a PO\; Žáci byli poučeni se Šk
+	olním řádem pro školní rok 2026/27 a řádně poučeni o BOZP a PO.\; Žáci byl
+	i seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BO
+	ZP a PO.\; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a
+	 řádně poučeni  o BOZP a PO\; Žáci byli seznámeni se Školním řádem pro ško
+	lní rok 2026/2027 a řádně poučeni o BOZ a PO\; Žáci byli seznámeni se Škol
+	ním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO\; Ž8ci byli
+	 seznámeni se Školním řádem pro školní rok 2026/27 a řádně poučeni o BOZP 
+	a PO\\".\; ŽÁCI BYLI SEZNÁMENÍ SEŠKOLNÍM ŘÁDEM PRO ŠKOLNÍ ROK 2026/2027 A 
+	ŘÁDNĚ POUČENI O BOZP A PO\; Žáci byli seznámeni se Školním řádem pro školn
+	í rok 2026/2027 a řádně poučeni o BOZP a PO\; seznámení se školním řádem a
+	 BOZP\, organizační záležitosti\; Žáci byli poučeni o školním řádu\, o BOZ
+	P\, seznámili se s dílnami\; Žáci byli seznámeni se školním řádem 2026/202
+	7 a BOZP a PO\; seznámení se školním řádem\, BOZP\; Žáci byli seznámeni se
+	 Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO\; Žáci
+	  byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučni 
+	o BOZP a PO\; Žáci  byli seznámeni se Školním řádem pro školní rok 2026/20
+	27 a řádně poučni o BOZP a PO\; Žáci byli seznámeni se Školním řádem pro š
+	kolní rok 2026/2027 a řádně poučeni o BOZP a PO\; Žáci byli seznámeni se Š
+	kolním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO\; Žáci b
+	yli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o 
+	BOZP a PO.\; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027
+	 a řádně poučeni o BOZP a PO.\; Ž8ci byli seznámeni se Školním řádem pro š
+	kolní rok 2026/27 a řádně poučeni o BOZP a PO\\".\; Žáci byli seznámeni se
+	 Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO\; Žáci
+	 byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni 
+	o BOZP a PO\, seznámeni s řádem IT učebny\; Žáci byli seznámeni se Školním
+	 řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO”.\; Školní řád
+	\, organizace školního roku 2026/2027. Žáci byli seznámeni se Školním řáde
+	m pro šk.  rok 2026/2027 a řádně poučeni o BOZP a PO\; Žáci byli seznámeni
+	 se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO.
+CATEGORIES:AKCE
+COLOR:mediumpurple
+DURATION:PT220M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:GnrAPO7sRRrqIuLZTyDor
+SUMMARY:[Změna] OPS (Operační systémy)
+DTSTAMP:20260903T140804Z
+DTSTART:20260902T095000Z
+DESCRIPTION:Vyučující: Rochel P.\nSkupina: 1.IT (celá třída)
+LOCATION:K1
+CATEGORIES:SUPLOVANI
+COLOR:tomato
+DURATION:PT100M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:YBcbfOeZHE16TGN6URkLe
+SUMMARY:[Změna] DEJ (Dějepis)
+DTSTAMP:20260903T140804Z
+DTSTART:20260902T060000Z
+DESCRIPTION:Vyučující: Humeníková E.\nSkupina: 1.IT (celá třída)
+LOCATION:M1.17
+CATEGORIES:SUPLOVANI
+COLOR:tomato
+DURATION:PT45M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ZW6blfzUc4z12nA2P-KSl
+SUMMARY:[Změna] MAT (Matematika)
+DTSTAMP:20260903T140804Z
+DTSTART:20260902T065500Z
+DESCRIPTION:Vyučující: Antoš K.\nSkupina: 1.IT (celá třída)
+LOCATION:K2.23
+CATEGORIES:SUPLOVANI
+COLOR:tomato
+DURATION:PT45M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:IhSDDi186OSQH1FzfvjU6
+SUMMARY:[Změna] ANJ (Anglický jazyk)
+DTSTAMP:20260903T140804Z
+DTSTART:20260902T075000Z
+DESCRIPTION:Vyučující: Vančurová J.\nSkupina: 1.IT (ANJ1)
+LOCATION:M2.28
+CATEGORIES:SUPLOVANI
+COLOR:tomato
+DURATION:PT45M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gnlMNkMqqVNtn1tS8v3sF
+SUMMARY:[Změna] PVA (Programování a vývoj aplikací)
+DTSTAMP:20260903T140804Z
+DTSTART:20260902T085500Z
+DESCRIPTION:Vyučující: Procházka P.\nSkupina: 1.IT (celá třída)
+LOCATION:H303
+CATEGORIES:SUPLOVANI
+COLOR:tomato
+DURATION:PT45M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:KkI0EnA_TggqUktKQoRNy
+SUMMARY:ČJL (Český jazyk a literatura)
+DTSTAMP:20260903T140804Z
+DTSTART:20260903T060000Z
+DESCRIPTION:Vyučující: Kovandová  K.\nSkupina: 1.IT (celá třída)\nUčivo: Úv
+	odní hodina - požadavky
+LOCATION:M1.24
+DURATION:PT45M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:Na2DRWt8Ds-Ejop9l9f-8
+SUMMARY:CHE (Chemie)
+DTSTAMP:20260903T140804Z
+DTSTART:20260903T065500Z
+DESCRIPTION:Vyučující: Braunová J.\nSkupina: 1.IT (celá třída)\nUčivo: Úvod
+	 do předmětu chemie\nPoznámka: Žáci byli poučeni o podmínkách hodnocení př
+	edmětu Chemie - podepsáno
+LOCATION:K2.31
+DURATION:PT45M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1zi2-7GFInGMfwLSphFau
+SUMMARY:FYZ (Fyzika)
+DTSTAMP:20260903T140804Z
+DTSTART:20260903T075000Z
+DESCRIPTION:Vyučující: Marková S.\nSkupina: 1.IT (celá třída)
+LOCATION:M2.36
+DURATION:PT45M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:jbjVr833EmnOs7qgiEr9Z
+SUMMARY:MAT (Matematika)
+DTSTAMP:20260903T140804Z
+DTSTART:20260903T085500Z
+DESCRIPTION:Vyučující: Antoš K.\nSkupina: 1.IT (celá třída)\nUčivo: Úvod do
+	 předmětu\, operace s čísly\, číselné obory.
+LOCATION:K2.23
+DURATION:PT45M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:UKHNC8MPephv4xmyRvdwz
+SUMMARY:ANJ (Anglický jazyk)
+DTSTAMP:20260903T140804Z
+DTSTART:20260903T095000Z
+DESCRIPTION:Vyučující: Vančurová J.\nSkupina: 1.IT (ANJ1)\nUčivo: Seznámení
+	 s požadavky klasifikace
+LOCATION:M2.28
+DURATION:PT45M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:mUgP6xuxVTxsmUU2qKgwk
+SUMMARY:ZEL (Základy elektrotechniky)
+DTSTAMP:20260903T140804Z
+DTSTART:20260903T104500Z
+DESCRIPTION:Vyučující: Endal D.\nSkupina: 1.IT (celá třída)\nUčivo: Elektri
+	cký náboj\, elektrické silové pole\,
+LOCATION:H318
+DURATION:PT45M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kOw7B-xREAXctcP77_BfB
+SUMMARY:PRX (Praxe)
+DTSTAMP:20260903T140804Z
+DTSTART:20260904T060000Z
+DESCRIPTION:Vyučující: Vasyliev S.\, Vasylieva Y.\nSkupina: 1.IT (celá tříd
+	a)
+LOCATION:D4.66
+DURATION:PT330M
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Začátek hodiny
+TRIGGER:-PT
+END:VALARM
+END:VEVENT
+END:VCALENDAR

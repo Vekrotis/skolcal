@@ -1,0 +1,2700 @@
+<!DOCTYPE html><html lang="cs" class="show--consent"><head><title>
+	KZK001 - Kalendář
+</title><meta http-equiv="expires" content="Wed, 10 Jan 1990 08:00:00 GMT"><meta http-equiv="Cache-control" content="no-cache, max-age=0, must-revalidate, no-store"><meta http-equiv="Pragma" content="no-cache"><meta name="application-name" content="Škola OnLine"><meta name="msapplication-tooltip" content="Školní informační systém Škola OnLine"><meta name="msapplication-starturl" content="/SOL"><meta name="msapplication-TileImage" content="/SOL/Themes/sol-bak/Images/tile144x144.png"><meta name="msapplication-TileColor" content="#470000">
+<link href="../../Themes/sol-bak/Infragistics/Default/ig_shared.css" type="text/css" rel="stylesheet">
+<link href="../../Themes/sol-bak/Infragistics/Default/ig_calendar.css" type="text/css" rel="stylesheet"><link href="/SOL/Themes/sol-bak/Images/favicon.ico" rel="shortcut icon" type="image/x-icon"><link href="/SOL/Themes/sol-bak/Images/favicon.ico" rel="icon" type="image/ico"><link href="../../Themes/master.css?v=2026-09-03T15:32:56" rel="stylesheet" type="text/css"><link href="../../Themes/touch-device.css?v=2026-09-03T15:32:56" rel="stylesheet" type="text/css"><link href="/SOL/Themes/style.sol-bak.min.css?v=2026-09-03T15:32:56" rel="stylesheet"><style id="cc--style" type="text/css">/** Light color-scheme **/
+:root{
+    --cc-bg: #fff;
+    --cc-text: #2d4156;
+    --cc-btn-primary-bg: #2d4156;
+    --cc-btn-primary-text: var(--cc-bg);
+    --cc-btn-primary-hover-bg: #1d2e38;
+    --cc-btn-secondary-bg: #eaeff2;
+    --cc-btn-secondary-text: var(--cc-text);
+    --cc-btn-secondary-hover-bg: #d8e0e6;
+    --cc-toggle-bg-off: #919ea6;
+    --cc-toggle-bg-on: var(--cc-btn-primary-bg);
+    --cc-toggle-bg-readonly: #d5dee2;
+    --cc-toggle-knob-bg: #fff;
+    --cc-toggle-knob-icon-color: #ecf2fa;
+    --cc-block-text: var(--cc-text);
+    --cc-cookie-category-block-bg: #f0f4f7;
+    --cc-cookie-category-block-bg-hover: #e9eff4;
+    --cc-section-border: #f1f3f5;
+    --cc-cookie-table-border: #e9edf2;
+    --cc-overlay-bg: rgba(4, 6, 8, .85);
+    --cc-webkit-scrollbar-bg: #cfd5db;
+    --cc-webkit-scrollbar-bg-hover: #9199a0;
+}
+
+/** Dark color-scheme **/
+.c_darkmode{
+    --cc-bg: #181b1d;
+    --cc-text: #d8e5ea;
+    --cc-btn-primary-bg: #a6c4dd;
+    --cc-btn-primary-text: #000;
+    --cc-btn-primary-hover-bg: #c2dff7;
+    --cc-btn-secondary-bg: #33383c;
+    --cc-btn-secondary-text: var(--cc-text);
+    --cc-btn-secondary-hover-bg: #3e454a;
+    --cc-toggle-bg-off: #667481;
+    --cc-toggle-bg-on: var(--cc-btn-primary-bg);
+    --cc-toggle-bg-readonly: #454c54;
+    --cc-toggle-knob-bg: var(--cc-cookie-category-block-bg);
+    --cc-toggle-knob-icon-color: var(--cc-bg);
+    --cc-block-text: #b3bfc5;
+    --cc-cookie-category-block-bg: #23272a;
+    --cc-cookie-category-block-bg-hover: #2b3035;
+    --cc-section-border: #292d31;
+    --cc-cookie-table-border: #2b3035;
+    --cc-webkit-scrollbar-bg: #667481;
+    --cc-webkit-scrollbar-bg-hover: #9199a0;
+}
+
+.cc_div *,
+.cc_div :before,
+.cc_div :after{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    float: none;
+    font-style: inherit;
+    font-variant: normal;
+    font-weight: inherit;
+    font-family: inherit;
+	line-height: 1.2;
+    font-size: 1em;
+    transition: none;
+    animation: none;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+    letter-spacing: unset;
+    color: inherit;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-decoration: none;
+    text-align: left;
+    visibility: unset;
+}
+
+.cc_div {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color: #2d4156;
+    color: var(--cc-text);
+}
+
+.cc_div .c-bn,
+.cc_div .b-tl,
+#s-ttl,
+#c-ttl,
+#s-bl td:before{
+    font-weight: 600;
+}
+
+#cm,
+#s-inr,
+.cc_div .c-bl,
+.cc_div .b-tl,
+#s-bl .act .b-acc{
+    border-radius: .35em;
+}
+
+#s-bl .act .b-acc{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.cc_div input,
+.cc_div button,
+.cc_div a{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.cc_div a{
+    border-bottom: 1px solid;
+}
+
+.cc_div a:hover{
+    text-decoration: none;
+    border-color: transparent;
+}
+
+/* Make elements "animatable" */
+.c--anim #cm,
+.c--anim #s-cnt,
+.c--anim #s-inr,
+#cs-ov,
+#cm-ov{
+    transition: visibility .25s linear, opacity .25s ease, transform .25s ease!important;
+}
+
+.c--anim .c-bn{
+    transition: background-color .25s ease!important;
+}
+
+/* start transitions */
+.c--anim #cm.bar.slide,
+.c--anim .bar.slide #s-inr{
+    transition: visibility .4s ease, opacity .4s ease, transform .4s ease!important;
+}
+
+.c--anim #cm.bar.slide + #cm-ov,
+.c--anim .bar.slide + #cs-ov{
+    transition: visibility .4s ease, opacity .4s ease, transform .4s ease!important;
+}
+
+#cm.bar.slide,
+.cc_div .bar.slide #s-inr{
+    transform: translateX(100%);
+    opacity: 1;
+}
+
+#cm.bar.top.slide,
+.cc_div .bar.left.slide #s-inr{
+    transform: translateX(-100%);
+    opacity: 1;
+}
+
+#cm.slide,
+.cc_div .slide #s-inr{
+    transform: translateY(1.6em);
+}
+
+#cm.top.slide{
+    transform: translateY(-1.6em);
+}
+
+#cm.bar.slide{
+    transform: translateY(100%);
+}
+
+#cm.bar.top.slide{
+    transform: translateY(-100%);
+}
+/* end transitions */
+
+/* Show modals */
+
+.show--consent .c--anim #cm,
+.show--consent .c--anim #cm.bar,
+.show--settings .c--anim #s-inr,
+.show--settings .c--anim .bar.slide #s-inr{
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible!important;
+}
+
+.show--consent .c--anim #cm.box.middle,
+.show--consent .c--anim #cm.cloud.middle{
+    transform: scale(1) translateY(-50%);
+}
+
+.show--settings .c--anim #s-cnt{
+    visibility: visible!important;
+}
+
+/* Show overlays */
+.force--consent.show--consent .c--anim #cm-ov,
+.show--settings .c--anim #cs-ov{
+    visibility: visible!important;
+    opacity: 1!important;
+}
+
+#cm{
+    font-family: inherit;
+    padding: 1.1em 1.8em 1.4em 1.8em;
+    position: fixed;
+    z-index: 1;
+    background: #fff;
+    background: var(--cc-bg);
+    max-width: 24.2em;
+    width: 100%;
+    bottom: 1.250em;
+    right: 1.250em;
+    box-shadow: 0 0.625em 1.875em #000000;
+    box-shadow: 0 0.625em 1.875em rgba(2, 2, 3, 0.28);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(.95);
+    line-height: initial;
+}
+
+/** fix https://github.com/orestbida/cookieconsent/issues/94 **/
+#cc_div #cm {
+    display: block!important;
+}
+
+#c-ttl{
+    margin-bottom: .7em;
+    font-size: 1.05em;
+}
+
+.cloud #c-ttl{
+    margin-top: -.15em;
+}
+
+#c-txt{
+    font-size: 0.9em;
+    line-height: 1.5em;
+}
+
+.cc_div #c-bns{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.4em;
+}
+
+.cc_div .c-bn{
+    color: #40505a;
+    color: var(--cc-btn-secondary-text);
+    background: #e5ebef;
+    background: var(--cc-btn-secondary-bg);
+    padding: 1em 1.7em;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 0.82em;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    text-align: center;
+    border-radius: 4px;
+    flex: 1;
+}
+
+#c-bns button + button,
+#s-cnt button + button,
+#s-c-bn{
+    float: right;
+    margin-left: 1em;
+}
+
+#s-cnt #s-rall-bn{
+    float: none;
+}
+
+#cm .c_link:hover,
+#cm .c_link:active,
+#s-cnt button + button:hover,
+#s-cnt button + button:active,
+#s-c-bn:active,
+#s-c-bn:hover{
+    background: #d8e0e6;
+    background: var(--cc-btn-secondary-hover-bg);
+}
+
+/**
+CookieConsent settings modal
+**/
+#s-cnt{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 101;
+    display: table;
+    height: 100%;
+    visibility: hidden;
+}
+
+#s-bl{
+    outline: none;
+}
+
+#s-bl .title{
+    margin-top: 1.4em;
+}
+
+#s-bl .title:first-child{
+    margin-top: 0;
+}
+
+#s-bl .b-bn{
+    margin-top: 0;
+}
+
+#s-bl .b-acc .p{
+    margin-top: 0;
+    padding: 1em;
+}
+
+#s-cnt .b-bn .b-tl{
+    display: block;
+    font-family: inherit;
+    font-size: .95em;
+    width: 100%;
+    position: relative;
+    padding: 1.3em 6.4em 1.3em 2.7em;
+    background: none;
+    transition: background-color .25s ease;
+}
+
+#s-cnt .b-bn .b-tl.exp{
+    cursor: pointer;
+}
+
+#s-cnt .act .b-bn .b-tl{
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#s-cnt .b-bn .b-tl:active,
+#s-cnt .b-bn .b-tl:hover{
+    background: #e9eff4;
+    background: var(--cc-cookie-category-block-bg-hover);
+}
+
+#s-bl .b-bn{
+    position: relative;
+}
+
+#s-bl .c-bl{
+    padding: 1em;
+    margin-bottom: .5em;
+    border: 1px solid #f1f3f5;
+    border-color: var(--cc-section-border);
+    transition: background-color .25s ease;
+}
+
+#s-bl .c-bl:hover{
+    background: #f0f4f7;
+    background: var(--cc-cookie-category-block-bg);
+}
+
+#s-bl .c-bl:last-child{
+    margin-bottom: .5em;
+}
+
+#s-bl .c-bl:first-child{
+    transition: none;
+    padding: 0;
+    margin-top: 0;
+    border:none;
+    margin-bottom: 2em;
+}
+
+#s-bl .c-bl:not(.b-ex):first-child:hover{
+    background: transparent;
+    background: unset;
+}
+
+#s-bl .c-bl.b-ex{
+    padding: 0;
+    border: none;
+    background: #f0f4f7;
+    background: var(--cc-cookie-category-block-bg);
+    transition: none;
+}
+
+#s-bl .c-bl.b-ex + .c-bl{
+    margin-top: 2em;
+}
+
+#s-bl .c-bl.b-ex + .c-bl.b-ex{
+    margin-top: 0;
+}
+
+#s-bl .c-bl.b-ex:first-child{
+    margin-bottom: 1em;
+}
+
+#s-bl .c-bl.b-ex:first-child{
+    margin-bottom: .5em;
+}
+
+#s-bl .b-acc{
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    margin-bottom: 0;
+    display: none;
+}
+
+#s-bl .act .b-acc{
+    max-height: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+#s-cnt .p{
+    font-size: 0.9em;
+    line-height: 1.5em;
+    margin-top: .85em;
+    color: #2d4156;
+    color: var(--cc-block-text);
+}
+
+.cc_div .b-tg .c-tgl:disabled{
+    cursor: not-allowed;
+}
+
+#c-vln{
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+}
+
+#cs{
+    padding: 0 1.7em;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+}
+
+#s-inr{
+    height: 100%;
+    position: relative;
+    max-width: 45em;
+    margin: 0 auto;
+    transform: scale(.96);
+    opacity: 0;
+    padding-top: 4.75em;
+    padding-bottom: 4.75em;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    visibility: hidden;
+    box-shadow: rgba(3, 6, 9, .26) 0px 13px 27px -5px;
+}
+
+#s-inr,
+#s-hdr,
+#s-bns{
+    background: #fff;
+    background: var(--cc-bg);
+}
+
+#s-bl{
+	overflow-y: auto;
+    overflow-y: overlay;
+    overflow-x: hidden;
+    height: 100%;
+    padding: 1.3em 2.1em;
+    display: block;
+    width: 100%;
+}
+
+#s-bns{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1em 2.1em;
+    border-top: 1px solid #f1f3f5;
+    border-color: var(--cc-section-border);
+    height: 4.75em;
+}
+
+.cc_div .cc-link{
+    color: #253b48;
+    color: var(--cc-btn-primary-bg);
+    border-bottom: 1px solid #253b48;
+    border-color: var(--cc-btn-primary-bg);
+    display: inline;
+    padding-bottom: 0;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.cc_div .cc-link:hover,
+.cc_div .cc-link:active{
+    border-color: transparent;
+}
+
+#c-bns button:first-child,
+#s-bns button:first-child{
+    color: #fff;
+    color: var(--cc-btn-primary-text);
+    background: #253b48;
+    background: var(--cc-btn-primary-bg);
+}
+
+#c-bns.swap button:first-child{
+    color: #40505a;
+    color: var(--cc-btn-secondary-text);
+    background: #e5ebef;
+    background: var(--cc-btn-secondary-bg);
+}
+
+#c-bns.swap button:last-child{
+    color: #fff;
+    color: var(--cc-btn-primary-text);
+    background: #253b48;
+    background: var(--cc-btn-primary-bg);
+}
+
+.cc_div .b-tg .c-tgl:checked ~ .c-tg{
+    background: #253b48;
+    background: var(--cc-toggle-bg-on);
+}
+
+#c-bns button:first-child:active,
+#c-bns button:first-child:hover,
+#s-bns button:first-child:active,
+#s-bns button:first-child:hover,
+#c-bns.swap button:last-child:active,
+#c-bns.swap button:last-child:hover{
+    background: #1d2e38;
+    background: var(--cc-btn-primary-hover-bg);
+}
+
+#c-bns.swap button:first-child:active,
+#c-bns.swap button:first-child:hover{
+    background: #d8e0e6;
+    background: var(--cc-btn-secondary-hover-bg);
+}
+
+#s-hdr{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: table;
+    padding: 0 2.1em;
+    height: 4.75em;
+    vertical-align: middle;
+    z-index: 2;
+    border-bottom: 1px solid #f1f3f5;
+    border-color: var(--cc-section-border);
+}
+
+#s-ttl{
+	display: table-cell;
+    vertical-align: middle;
+    font-size: 1em;
+}
+
+#s-c-bn{
+    padding: 0;
+    width: 1.7em;
+    height: 1.7em;
+    font-size: 1.45em;
+    margin: 0;
+    font-weight: initial;
+    position: relative;
+}
+
+#s-c-bnc{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cc_div span.t-lb {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+#c_policy__text{
+    height: 31.250em;
+    overflow-y: auto;
+    margin-top: 1.250em;
+}
+
+#c-s-in{
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    height: 100%;
+    height: calc(100% - 2.5em);
+    max-height: 37.5em;
+}
+
+@media screen and (min-width: 688px) {
+    /** works only on webkit-based browsers **/
+    #s-bl::-webkit-scrollbar{
+        width: .9em;
+        height: 100%;
+        background: transparent;
+        border-radius: 0 0.250em 0.250em 0;
+    }
+    
+    #s-bl::-webkit-scrollbar-thumb{
+        border: 0.25em solid var(--cc-bg);
+        background: #cfd5db;
+        background: var(--cc-webkit-scrollbar-bg);
+        border-radius: 100em;
+    }
+
+    #s-bl::-webkit-scrollbar-thumb:hover{
+        background: #9199a0;
+        background: var(--cc-webkit-scrollbar-bg-hover);
+    }
+
+    #s-bl::-webkit-scrollbar-button {
+        width: 10px;
+        height: 5px;
+    }
+}
+
+/** custom checkbox **/
+/* The container */
+.cc_div .b-tg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: inline-block;
+    margin: auto;
+    right: 1.2em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;  
+    vertical-align: middle;
+}
+
+/* Hide the browser's default checkbox */
+.cc_div .b-tg .c-tgl {
+    position: absolute;
+    cursor: pointer;
+    display: block;
+    top: 0;
+    left: 0;
+    margin: 0;
+    border: 0;
+}
+
+/* Create a custom checkbox */
+.cc_div .b-tg .c-tg {
+    position: absolute;
+    background: #919ea6;
+    background: var(--cc-toggle-bg-off);
+    transition: background-color .25s ease, box-shadow .25s ease;
+    pointer-events: none;
+}
+
+.cc_div span.t-lb,
+.cc_div .b-tg,
+.cc_div .b-tg .c-tg,
+.cc_div .b-tg .c-tgl{
+    width: 3.4em;
+    height: 1.5em;
+    border-radius: 4em;
+}
+
+.cc_div .b-tg .c-tg.c-ro{
+    cursor: not-allowed;
+}
+
+.cc_div .b-tg .c-tgl ~ .c-tg.c-ro{
+    background: #d5dee2;
+    background: var(--cc-toggle-bg-readonly);
+}
+
+.cc_div .b-tg .c-tgl ~ .c-tg.c-ro:after{
+    box-shadow: none;
+}
+
+/* Style the checkmark/indicator */
+.cc_div .b-tg .c-tg:after {
+    content: "";
+    position: relative;
+    display: block;
+    left: 0.125em;
+    top: 0.125em;
+    width: 1.25em;
+    height: 1.25em;
+    border: none;
+    box-sizing: content-box;
+    background: #fff;
+    background: var(--cc-toggle-knob-bg);
+    box-shadow: 0 1px 2px rgba(24, 32, 35, .36);
+    transition: transform .25s ease;
+    border-radius: 100%;
+}
+
+/* Show the checkmark when checked */
+.cc_div .b-tg .c-tgl:checked ~ .c-tg:after{
+    transform: translateX(1.9em);
+}
+
+#s-bl table,
+#s-bl th,
+#s-bl td{
+    border: none;
+}
+
+#s-bl tbody tr{
+    transition: background-color .25s ease;
+}
+
+#s-bl tbody tr:hover{
+    background: #e9eff4;
+    background: var(--cc-cookie-category-block-bg-hover);
+}
+
+#s-bl table { 
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#s-bl td, 
+#s-bl th { 
+    padding: 0.8em 0.625em;
+    text-align: left;
+    vertical-align: top;
+    font-size: .8em;
+    padding-left: 1.2em;
+}
+
+#s-bl th { 
+	font-family: inherit;
+    padding: 1.2em 1.2em;
+}
+
+#s-bl thead tr:first-child{
+    border-bottom: 1px solid #e9edf2;
+    border-color: var(--cc-cookie-table-border);
+}
+
+.force--consent #s-cnt,
+.force--consent #cs{
+    width: 100vw;
+}
+
+#cm-ov,
+#cs-ov{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    visibility: hidden;
+    opacity: 0;
+    background: #070707;
+    background: rgba(4, 6, 8, .85);
+    background: var(--cc-overlay-bg);
+    display: none;
+    transition: none;
+}
+
+.show--settings #cs-ov,
+.c--anim #cs-ov,
+.force--consent .c--anim #cm-ov,
+.force--consent.show--consent #cm-ov{
+    display: block;
+}
+
+#cs-ov{
+    z-index: 2;
+}
+
+.force--consent .cc_div{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    width: 100vw;
+    visibility: hidden;
+    transition: visibility .25s linear;
+}
+
+.force--consent.show--consent .c--anim .cc_div,
+.force--consent.show--settings .c--anim .cc_div{
+    visibility: visible;
+}
+
+.force--consent #cm{
+    position: absolute;
+}
+
+.force--consent #cm.bar{
+    width: 100vw;
+    max-width: 100vw;
+}
+
+html.force--consent.show--consent{
+    overflow-y: hidden!important;
+}
+
+html.force--consent.show--consent,
+html.force--consent.show--consent body{
+    height: auto!important;
+    overflow-x: hidden!important;
+}
+/** END BLOCK PAGE SCROLL */
+
+/** BEGIN ICONS **/
+.cc_div .b-bn .b-tl.exp::before,
+.cc_div .act .b-bn .b-tl.exp::before{
+    border: solid #2d4156;
+    border-color: var(--cc-btn-secondary-text);
+    border-width: 0 2px 2px 0;
+    padding: .2em;
+    display: inline-block;
+    position: absolute;
+    content: '';
+    margin-right: 15px;
+    position: absolute;
+    transform: translateY(-50%) rotate(45deg);
+    left: 1.2em;
+    top: 50%;
+}
+
+.cc_div .act .b-bn .b-tl::before{
+    transform: translateY(-20%) rotate(225deg);
+}
+
+.cc_div .on-i::before{
+    border: solid #fff;
+    border-color: var(--cc-toggle-knob-icon-color);
+    border-width: 0 2px 2px 0;
+    padding: .1em;
+    display: inline-block;
+    padding-bottom: .45em;
+    content: '';
+    margin: 0 auto;
+    transform: rotate(45deg);
+    top: .37em;
+    left: .75em;
+    position: absolute;
+}
+
+#s-c-bn::before,
+#s-c-bn::after{
+    content: '';
+    position: absolute;
+    left: .82em;
+    top: .58em;
+    height: .6em;
+    width: 1.5px;
+    background: #444d53;
+    background: var(--cc-btn-secondary-text);
+    transform: rotate(45deg);
+    border-radius: 1em;
+    margin: 0 auto;
+}
+
+#s-c-bn::after{
+    transform: rotate(-45deg);
+}
+
+.cc_div .off-i,
+.cc_div .on-i{
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    right: 0;
+    display: block;
+    text-align: center;
+    transition: opacity .15s ease;
+}
+
+.cc_div .on-i{
+    left: 0;
+    opacity: 0;
+}
+
+.cc_div .off-i::before,
+.cc_div .off-i::after{
+    right: .8em;
+    top: .42em;
+    content: ' ';
+    height: .7em;
+    width: .09375em;
+    display: block;
+    background: #cdd6dc;
+    background: var(--cc-toggle-knob-icon-color);
+    margin: 0 auto;
+    position: absolute;
+    transform-origin: center;
+}
+
+.cc_div .off-i::before {
+    transform: rotate(45deg);
+}
+.cc_div .off-i::after {
+    transform: rotate(-45deg);
+}
+
+.cc_div .b-tg .c-tgl:checked ~ .c-tg .on-i{
+    opacity: 1;
+}
+.cc_div .b-tg .c-tgl:checked ~ .c-tg .off-i{
+    opacity: 0;
+}
+/** END ICONS **/
+
+#cm.box.middle,
+#cm.cloud.middle{
+    top: 50%;
+    transform: translateY(-37%);
+    bottom: auto;
+}
+
+#cm.box.middle.zoom,
+#cm.cloud.middle.zoom{
+    transform: scale(.95) translateY(-50%);
+}
+
+#cm.box.center{
+    left: 1em;
+    right: 1em;
+    margin: 0 auto;
+}
+
+/* Start cloud layout */
+#cm.cloud {
+    max-width: 50em;
+    margin: 0 auto;
+    text-align: center;
+    left: 1em;
+    right: 1em;
+    overflow: hidden;
+    padding: 1.3em 2em;
+    width: unset;
+}
+
+.cc_div .cloud #c-inr{
+    display: table;
+    width: 100%;
+}
+
+.cc_div .cloud #c-inr-i{
+    width: 70%;
+    display: table-cell;
+    vertical-align: top;
+    padding-right: 2.4em;
+}
+
+.cc_div .cloud #c-txt{
+    font-size: 0.85em;
+}
+
+.cc_div .cloud #c-bns{
+    min-width: 170px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#cm.cloud .c-bn{
+    margin: .625em 0 0 0;
+    width: 100%;
+}
+
+#cm.cloud .c-bn:first-child{
+    margin: 0;
+}
+
+#cm.cloud.left{
+    margin-right: 1.25em;
+}
+
+#cm.cloud.right{
+    margin-left: 1.25em;
+}
+/* End cloud layout */
+
+/* Start bar layout */
+#cm.bar {
+    width: 100%;
+    max-width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
+    position: fixed;
+    padding: 2em;
+}
+
+#cm.bar #c-inr{
+    max-width: 32em;
+    margin: 0 auto;
+}
+
+#cm.bar #c-bns{
+    max-width: 33.75em;
+}
+
+#cm.bar #cs{
+    padding: 0;
+}
+
+.cc_div .bar #c-s-in{
+    top: 0;
+    transform: none;
+    height: 100%;
+    max-height: 100%;
+}
+
+.cc_div .bar #s-hdr,
+.cc_div .bar #s-bl,
+.cc_div .bar #s-bns {
+    padding-left: 1.6em;
+    padding-right: 1.6em;
+}
+
+.cc_div .bar #cs{
+    padding: 0;
+}
+
+/* align bar to right by default */
+.cc_div .bar #s-inr{
+    margin: 0;
+    margin-left: auto;
+    margin-right: 0;
+    border-radius: 0;
+    max-width: 32em;
+}
+
+.cc_div .bar.left #s-inr{
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Force table to not be like tables anymore */
+.cc_div .bar #s-bl table, 
+.cc_div .bar #s-bl thead, 
+.cc_div .bar #s-bl tbody, 
+.cc_div .bar #s-bl th, 
+.cc_div .bar #s-bl td, 
+.cc_div .bar #s-bl tr,
+.cc_div .bar #s-cnt{ 
+    display: block; 
+}
+
+/* Hide table headers (but not display: none;, for accessibility) */
+.cc_div .bar #s-bl thead tr{ 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+.cc_div .bar #s-bl tr{
+    border-top: 1px solid #e3e7ed;
+    border-color: var(--cc-cookie-table-border);
+}
+
+.cc_div .bar #s-bl td { 
+    /* Behave  like a "row" */
+    border: none;
+    position: relative;
+    padding-left: 35%; 
+}
+
+.cc_div .bar #s-bl td:before { 
+    position: absolute;
+    left: 1em;
+    padding-right: 0.625em;
+    white-space: nowrap;
+    content: attr(data-column);
+    color: #000;
+    color: var(--cc-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* End bar layout */
+
+/* Positions */
+#cm.top {
+    bottom: auto;
+    top: 1.250em;
+}
+
+#cm.left{
+    right: auto;
+    left: 1.250em;
+}
+
+#cm.right{
+    left: auto;
+    right: 1.250em;
+}
+
+#cm.bar.left,
+#cm.bar.right{
+    left: 0;
+    right: 0;
+}
+
+#cm.bar.top{
+    top: 0;
+}
+/* end positions */
+
+@media screen and (max-width: 688px) {
+
+    #cm,
+    #cm.cloud,
+    #cm.left,
+    #cm.right{
+        width: auto;
+        max-width: 100%;
+        margin: 0;
+        padding: 1.4em!important;
+        right: 1em;
+        left: 1em;
+        bottom: 1em;
+        display: block;
+    }
+
+    .force--consent #cm,
+    .force--consent #cm.cloud{
+        width: auto;
+        max-width: 100vw;
+    }
+
+    #cm.top{
+        top: 1em;
+        bottom: auto;
+    }
+
+    #cm.bottom{
+        bottom: 1em;
+        top: auto;
+    }
+
+    #cm.bar.bottom{
+        bottom: 0;
+    }
+
+    #cm.cloud .c-bn{
+        font-size: .85em;
+    }
+
+    #s-bns,
+    .cc_div .bar #s-bns{
+        padding: 1em 1.3em;
+    }
+
+    .cc_div .bar #s-inr{
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .cc_div .cloud #c-inr-i{
+        padding-right: 0;
+    }
+
+    #cs{
+        border-radius: 0;
+        padding: 0;
+    }
+
+    #c-s-in{
+        max-height: 100%;
+        height: 100%;
+        top: 0;
+        transform: none;
+    }
+
+    .cc_div .b-tg{
+        transform: scale(1.1);
+        right: 1.1em;
+    }
+
+    #s-inr{
+        margin: 0;
+        padding-bottom: 7.9em;
+        border-radius: 0;
+    }
+
+    #s-bns{
+        height: 7.9em;
+    }
+
+	#s-bl,
+    .cc_div .bar #s-bl{
+		padding: 1.3em;
+    }
+    
+	#s-hdr,
+    .cc_div .bar #s-hdr{
+        padding: 0 1.3em;
+    }
+
+    /** dynamic table layout **/
+    #s-bl table { 
+        width: 100%; 
+    }
+
+    #s-inr.bns-t{
+        padding-bottom: 10.5em;
+    }
+
+    .bns-t #s-bns{
+        height: 10.5em;
+    }
+
+    .cc_div .bns-t .c-bn{
+        font-size: 0.83em;
+        padding: .9em 1.6em;
+    }
+
+    #s-cnt .b-bn .b-tl{
+        padding-top: 1.2em;
+        padding-bottom: 1.2em;
+    }
+
+    /* Force table to not be like tables anymore */
+    #s-bl table, 
+    #s-bl thead, 
+    #s-bl tbody, 
+    #s-bl th, 
+    #s-bl td, 
+    #s-bl tr,
+    #s-cnt{ 
+        display: block; 
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    #s-bl thead tr{ 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    #s-bl tr{
+        border-top: 1px solid #e3e7ed;
+        border-color: var(--cc-cookie-table-border);
+    }
+
+    #s-bl td { 
+        /* Behave  like a "row" */
+        border: none;
+        position: relative;
+        padding-left: 35%; 
+    }
+
+    #s-bl td:before { 
+        position: absolute;
+        left: 1em;
+        padding-right: 0.625em;
+        white-space: nowrap;
+        content: attr(data-column);
+        color: #000;
+        color: var(--cc-text);
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #cm .c-bn,
+    .cc_div .c-bn{
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #s-cnt #s-rall-bn{
+        margin-left: 0;
+    }
+
+    .cc_div #c-bns{
+        flex-direction: column;
+    }
+
+    #c-bns button + button,
+    #s-cnt button + button{
+        margin-top: 0.625em;
+        margin-left: 0;
+        float: unset;
+    }
+
+    #cm.cloud,
+    #cm.box{
+        left: 1em;
+        right: 1em;
+        width: auto;
+    }
+
+    #cm.cloud.right,
+    #cm.cloud.left{
+        margin: 0;
+    }
+
+    .cc_div .cloud #c-bns,
+    .cc_div .cloud #c-inr,
+    .cc_div .cloud #c-inr-i{
+        display: block;
+        width: auto;
+        min-width: unset;
+    }
+
+    .cc_div .cloud #c-txt{
+        font-size: .9em;
+    }
+
+    .cc_div .cloud #c-bns{
+        margin-top: 1.625em;
+    }
+}
+
+/* Begin IE fixes */
+.cc_div.ie #c-vln{
+	height: 100%;
+	padding-top: 5.62em;
+}
+
+.cc_div.ie .bar #c-vln{
+    padding-top: 0;
+}
+
+.cc_div.ie #cs{
+    max-height: 37.5em;
+    position: relative;
+	top: 0;
+	margin-top: -5.625em;
+}
+
+.cc_div.ie .bar #cs{
+    margin-top:0;
+    max-height: 100%;
+}
+
+.cc_div.ie #cm{
+    border: 1px solid #dee6e9;
+}
+
+.cc_div.ie #c-s-in{
+    top: 0;
+}
+
+.cc_div.ie .b-tg{
+	padding-left: 1em;
+	margin-bottom: 0.7em;
+}
+
+.cc_div.ie .b-tg .c-tgl:checked ~ .c-tg:after{
+    left: 1.95em;
+}
+
+.cc_div.ie #s-bl table{
+	overflow: auto;
+}
+
+.cc_div.ie .b-tg .c-tg{
+    display: none;
+}
+
+.cc_div.ie .b-tg .c-tgl{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0.2em;
+    height: auto;
+}
+
+.cc_div.ie #s-cnt .b-bn .b-tl{
+    padding: 1.3em 6.4em 1.3em 1.4em
+}
+
+.cc_div.ie  .bar #s-bl td:before{
+    display: none;
+}
+
+.cc_div.ie .bar #s-bl td{
+    padding: 0.8em 0.625em 0.8em 1.2em;
+}
+
+.cc_div.ie .bar #s-bl thead tr{
+    position: relative;
+}
+
+.cc_div.ie .b-tg .t-lb{
+    filter: alpha(opacity=0);
+}
+
+.cc_div.ie #cm-ov,
+.cc_div.ie #cs-ov{
+    filter: alpha(opacity=80);
+}
+
+
+#c-s-bn {
+    background-color: white;
+    color: gray;
+}
+
+
+/** END IE FIXES **/</style></head>
+<body oncontextmenu="return false;">
+    <script type="text/javascript">
+        function predmetDetail() {
+            window.location = "../Rozvrh/KZP001_PredmetyVS.aspx?UDALOST_ID=" + menuParameters[2] +
+                "&ReturnPage=../Kalendar/KZK001_KalendarTyden.aspx";
+        }
+    </script>
+
+    <form name="Form1" method="post" action="./KZK001_KalendarTyden.aspx" id="Form1" class="KZK001 sol-content-width-full">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+<input type="hidden" name="__VIEWSTATE_SESSION_KEY" id="__VIEWSTATE_SESSION_KEY" value="VIEWSTATE_639240484834223747">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/SOL/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZM-V0qvYllL0RccRdCGM4LnTFig4ngcxpV7JTSz_W4-zeFvBTw2&amp;t=639190905332169432" type="text/javascript"></script>
+
+
+                 <script language="javascript">
+                var monthDate = null;
+                function valueChanging(owner, date, evt) {
+                    if(date == null) {
+                        monthDate = null;
+                        return;
+                    }
+                    if(date.getMonth() != owner.getVisibleMonth().getMonth()){
+                        monthDate = new Date(date.getTime());
+                    }
+                    else {
+                        monthDate = null;
+                    }
+        }
+                function valueChanged(owner, date, evt) {
+                    if(monthDate) {
+                        owner.setVisibleMonth(monthDate);
+                    }
+        }
+                </script>
+<script src="/SOL/JavaScript/jQuery/jquery-1.9.1.min.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script src="/SOL/JavaScript/jQuery/jquery.browser.min.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script src="/SOL/JavaScript/jQuery/jquery-migrate-1.4.1.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+                        ;$(function () {
+                            var $div = $('.sol-body-wrapper');
+                            var marginLeftRight = parseInt($div.css('marginLeft')) + parseInt($div.css('marginRight'));
+                            var div = $div.get(0);
+                            if (div) {
+                                var contentWidth = div.scrollWidth + marginLeftRight;
+                                if ($('.top_frame').width() < contentWidth) {
+                                    $('.top_frame').width(contentWidth);
+                                }
+                            }
+                        });//]]>
+</script>
+
+<script src="/SOL/Scripts/bootstrap.bundle.min.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script src="/SOL/JavaScript/HotFix.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script src="/SOL/JavaScript/hotfix/ig_webdropdown.patch.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script src="/SOL/JavaScript/focus.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script src="/SOL/JavaScript/window.log.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script src="/SOL/JavaScript/hotfix/ig_msie_detection.patch.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script src="/SOL/JavaScript/backbutton-disable.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script src="/SOL/JavaScript/sol.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script src="/SOL/JavaScript/onload.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script src="/SOL/JavaScript/kalendarvypis-tooltipprovider.js?v=2026-09-03T15:32:56" type="text/javascript"></script><script type="text/plain" data-cookiecategory="analytics">
+var GoogleAnalyticsWebID = 'UA-6348056-2';
+</script><script type="text/plain" data-cookiecategory="analytics" src="/SOL/JavaScript/google/google-analytics.js?v=2026-09-03T15:32:56">
+</script>
+<script src="/SOL/JavaScript/cookieconsent/cookieconsent.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script src="/SOL/JavaScript/cookieconsent/cookieconsent-app.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script src="/SOL/JavaScript/hotfix/ig_webgrid_cb.patch.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script>
+(function () {
+  var overDiv = document.getElementById('overDiv');
+  if (overDiv == null) {
+    var div = document.createElement('div');
+    div.id = 'overDiv';
+    div.style.position = 'absolute';
+    div.style.visibility = 'hidden';
+    div.style.zIndex = 1000;
+    document.body.appendChild(div);
+  }
+}());
+</script>
+<script type="text/javascript" src="/SOL\JavaScript\tooltip.js?v=2026-09-03T15:32:56"></script>
+<script type="text/javascript" src="/SOL\JavaScript\overlib.min.js?v=2026-09-03T15:32:56"></script>
+<script type="text/javascript" src="/SOL\JavaScript\overlib_cssstyle.min.js?v=2026-09-03T15:32:56"></script>
+
+<script src="/SOL\JavaScript\jQuery/jquery.mobile.vmouse.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+ function onMouseOut() { window.tooltipIdentification = null; if(typeof(nd) != 'undefined') { return nd(); } } 
+function CCAButtonLockScreen(lockID, causesValidation) { 
+  var jeValidni = ((typeof (Page_IsValid) != 'undefined') ? Page_IsValid : true); 
+  var causesValidation
+  if (jeValidni || causesValidation == '0') { 
+    var e = document.getElementById(lockID); 
+    if (e) e.className='LockScreenOn'; 
+    return jeValidni; 
+  } 
+}//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+var ig_pi_imageUrl='/SOL/WebResource.axd?d=TxrpyKyWW7W8Vvnjg71AIG0Jjy8M7qBndvSie8BrQn0Y20_nu1iu-Xw9BPGpl8xcekF9qdg0_QOVqRFAmiMole5G_xodQzFXCStz1WcziDYtW8lJWx0WP9zHdA_oqBPHvJWPLQHELa032lKyUBRYUkfm60jxfk9MzOc1yTPuVDRlHzh60&t=639220047531967962';try{(new Image()).src=ig_pi_imageUrl;}catch(ex){}
+//]]>
+</script>
+<script src="/SOL/ScriptResource.axd?d=eaBvf8SEZ7GyGoLx-4wo5q-JJMgDZDGXOb3pbJACud2pVvWamuh934t_A0wmH1xnfXxVGaXbrPO6f4lEjC4jnLgju8XNwSGwhduxOD-h_lC93Egpkls-pm3BasrE2ywJgA007ls3mYxedrtaYvQWr_-IkoY1&amp;t=ffffffff8d839678" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=39e97bwC_3vXi4sq3udMXzBSiSsH0YX34sP6dddq6E2yh2G15P-j9Ef-WadBhZgc4YKrhn2hvndfh3RbjiKeKEWudY_sYrW0khnzaK_u0xtwi5IdnfwwR7HdRil0M-54I4O4UNt8rGjOAghWb0xqnoZCW5IJbnl--xvwnpsc_NSDpN4P0&amp;t=ffffffffec2132a1" type="text/javascript"></script>
+<script src="../../JavaScript/kalendar-normalize-column-width.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script src="../../JavaScript/jQuery/jquery.fixedtableheader.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function() { jQuery('#CCADynamicCalendarTable').fixedtableheader({ "cssclass": "CCADynamicCalendarTable_FixedTableHeader" }); });//]]>
+</script>
+<script type="text/javascript" src="/SOL/JavaScript/table_cell.js?v=2026-09-03T15:32:56"></script>
+
+<script src="/SOL/JavaScript/instantni-napoveda-editor.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script src="/SOL/JavaScript/instantni-napoveda.js?v=2026-09-03T15:32:56" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+instantHelp.titleDefaultText = 'Nápověda';instantHelp.druhOrganizaceID = 'KS';instantHelp.prodlevaZobrazeniMS = 0;
+instantniNapovedaEditor.labelNapovedaProPoleTextTemplate = 'Instantní nápověda k vybranému poli "{0}".';
+
+var KZK001; if (!KZK001) { KZK001 = {
+
+}; }
+//]]>
+</script>
+
+<script src="/SOL/ScriptResource.axd?d=x6wALODbMJK5e0eRC_p1LcXEmWv2sxhTS6T81lER4nnHte_VnP14qOxm_eYpq9YBC9K1qoLB3BqC_R6J09ml4QIcYowzkNpDo7dO_HdVAGur-ech0&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=P5lTttoqSeZXoYRLQMIScFB9w44ZfB4oaKsbqETvhPxk1Lm2Q7CiDZLGb9cGIL3PEU3KXOlLsQIy2YSIoO-W5hdaxMfOo03DOGY7Xql_biNocr1n0&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=NHo7rzvB81m25b5lv-ojMSBwV0MnQML7XseXcEXE3lbIetMqjPuL-ogn0DWDi5OwpN3rCsC9lNMdojBqwcZzSjSisbf6qMtILtyChwGFgmZBlXPA0&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=cwGphBcvejt2VIyBHnRhTVEr6v11oyBMq2jp-avh_5UJudvThw4Qoq79ziOgZ5lUItBmmvTS4y6w_TUImvdtG4pijVIuyHHZv7TkXHGY9YkYQBzV0&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=ZT9rkJNR62Xa35oVFu0brRp249NZ-A91cs4uwKoil8UYY9zgsx7r1YyAbg4Y29xMKV9IqmiCNFGw5cFIlLmvD6sKFJu_JoOibhn4S7Poe62MRMSV1ufsv_6dlb2V0moT-tGJ9Q2&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=G7OZOzpYF9XwHB8eN29YbyWFew8rjh1qCjnS4M8QVa3AAmb3RwUBGWsnY_d96EUAWC7ZHGYgmQk6MkEM64yOfm7eCJXPZhPRhl4xh0htg_mTYfswlgh9uMLcjdX86E0iTNUzzw2&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=dyNR31g23bihdQsCIkXUOH17ImVVj1lxJwD_L7GhSO_aatNcPmF7X63-1AaV8Sh-aLSqDNAI3mm6kPhuwgrcMngWuSWsq-cN6jZzI4iNt7HMIuhM79JjkgdmQRPIUyGWV-oUVA2&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=t8xKct_NbNgBw-XPoRZ-nNLwUJBiJemxlIalH9Eb2I9s11pBnNvHz8ctiPmWSEezUIIyKc4Q986Z0d-vFg-kS2F2Mg1cS1HEsJWQju7K3amCJRPZVtb18Z_NsuF6b8DcQ88n_g2&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=TLZ1vtjBxtO9Jbc2uVK03xLhx-rwA3HEqYGjdWIY0PZk4fFoX_BojakDx3qATJNkkQFiwMjA3Ztp_oS-LYCnz3bhAOJbM47kmQ6P7R-VVieTc4ZHXlWAioQCtdoEdN2NWpQVAQ2&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=IDWj4WSOOvkdPRnPVbJVZOQjiNMBnLD2zSVOwJLDuXm8MEfzm4IyuZSu0TM7O1Q0EmlqB-82Y3XMjI-Q1jMYpyxpaEMVC3Pa_8YQuLBr16D4-SVk0&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=QURf4xOsrV7WTJCWSccZW07qDkP-w5nQ9yOMLNAOX4KRCJEyzV0GiUrY-9hE1rjIzFpgTcZPK1jkm6W3bEKoFfZlz57WYNVEgjpMTEe43oZlkfCoKzAVSwFCTkvENcBoznH1eg2&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=APiGnkSUwteJqB7qVaRTTibelNEMKVailrNsvpjfMTV-347s7g_P7bp7T0G841tNRNjsROMqaCGXxVFQoH8IBAM7nDJIBG_WGoSokW2p9mjOyPZLskCB24O3tcSTVNV5mFx0lw2&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=pu2ExBiwxefn6RsV2td6q-hxCHuS8_t0YVwY1s6deOL_WfqsoNNMfUiT43KeCl5PnDrqHvB9_A2iNXbdjYCYwsVeate4kcwjlXQOvL27HtAgK60f9_It0ew4nJ1eVamUgB7iBQ2&amp;t=7c776dc1" type="text/javascript"></script>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'Form1', [], [], [], 90, '');
+//]]>
+</script>
+
+
+        <div class="sol-page">
+
+            <div class="top_frame sol-header" style="width: 1594px;">
+                <!-- TOP BEGIN -->
+                
+
+<script>
+    var logoutRezervaSec = 15; // o tolik sekund se provede odhlášení dřív
+    var logoutTimeoutSecVychozi = 30 * 60 - logoutRezervaSec;
+    var logoutTimeoutSec = logoutTimeoutSecVychozi;
+    var logoutTimeoutSec10Percent = parseInt(logoutTimeoutSecVychozi * 0.1);
+    var upozorneniOdhlaseniSec = 0 * 60;
+    var vypsanoUpozorneniOdhlaseni = false;
+    var loadTime = null;
+    var periodaSec = 1;
+    var logoutTickHandler = null;
+    var pageAuthExpiration = new Date(document.cookie.match('(^|;)\\s*' + 'SESSION_EXPIRES' + '\\s*=\\s*([^;]+)')?.pop() || '');
+
+    function logoutTick() {
+        var currentAuthExpiration = new Date(document.cookie.match('(^|;)\\s*' + 'SESSION_EXPIRES' + '\\s*=\\s*([^;]+)')?.pop() || '');
+        if (!(currentAuthExpiration instanceof Date && !isNaN(currentAuthExpiration))) {
+            clearInterval(logoutTickHandler); // zrusi opakovane nacasovani 
+            document.location = '../../Prihlaseni.aspx?Session=Logout';
+            return;
+        }
+
+        if (logoutTimeoutSec >= 0) {
+            var elm = document.getElementById('ctl15_lblPocetMinutDoOdhlaseniValue');
+            if (elm) {
+                elm.firstChild.data = Math.ceil(logoutTimeoutSec / 60); // minuty
+                if (logoutTimeoutSec <= logoutTimeoutSec10Percent) {
+                    if (elm.className.match(/\bHeaderIconLabel\b/)) {
+                        elm.className = 'HeaderIconLabelAlert';
+                    } else {
+                        elm.className = 'HeaderIconLabel';
+                    }
+                }
+                if (vypsanoUpozorneniOdhlaseni == false && upozorneniOdhlaseniSec > 0 && logoutTimeoutSec <= upozorneniOdhlaseniSec) {
+                    if (pageAuthExpiration < currentAuthExpiration) {
+                        alert('V případě, že neprovedete žádnou akci, můžete za 0 minut přijít o neuložená data.');
+                    } else {
+                        alert('V případě, že neprovedete žádnou akci, budete za 0 minut odhlášeni.');
+                    }
+                    vypsanoUpozorneniOdhlaseni = true;
+                }
+                logoutTimeoutSec = logoutTimeoutSec - periodaSec;
+            }
+        }
+        var pageAgeMS = new Date() - loadTime;
+
+        // na strance jiz expirovala data, aje jina stranka stale prodluzuje session
+        if ((logoutTimeoutSecVychozi * 1000) < pageAgeMS) {
+            clearInterval(logoutTickHandler); // zrusi opakovane nacasovani 
+            var currentAuthExpiration = new Date(document.cookie.match('(^|;)\\s*' + 'SESSION_EXPIRES' + '\\s*=\\s*([^;]+)')?.pop() || '');
+            var now = new Date();
+            var expirationInMS = currentAuthExpiration - now;
+            // pokud je expirace session dostatecne v budoucnu, tak pouze redirect na default, jinak logout
+            if (expirationInMS > (logoutRezervaSec * 1000)) {
+                document.location = '../Default.aspx?reason=formexpired';
+            } else {
+                document.location = '../Logout.aspx?action=timeout';
+            }
+        }
+    }
+</script>
+
+<header>
+    
+    <div class="top-header">
+        <div class="logo">
+            <a href="../../Default.aspx"></a>
+        </div>
+
+        
+        <nav class="header-links">
+            <ul id="ctl15_menuHeaderLinks" class="ButtonMenu">
+                
+                <li id="ctl15_menuItemVyberSkolu" class="ButtonMenuItemVyberSkolu">
+                    <a id="ctl15_linkVyberSkolu" class="vyber-skolu" href="https://vyberskolu.cz/?utm_source=web_SOL&amp;utm_medium=ikona&amp;utm_campaign=zaci" target="_blank">Vyber&nbsp;školu</a>
+                </li>
+
+                
+
+                
+
+                
+            </ul>
+        </nav>
+
+        
+
+        <div id="ctl15_pnlMessages" class="messages">
+	
+            <a id="ctl15_linkNovaZprava" title="Klikněte pro zobrazení nepřečtených zpráv" href="../Zpravy/KZZ005_PrijateZpravy.aspx?MOD=NEPRECTENE"><span id="ctl15_lblNovaZpravaPocet" class="badge">1</span><br>
+                <span id="ctl15_lblZprava" ldlanguageid="TOPPART041">Zprávy</span></a>
+        
+</div>
+        
+        <div class="account">
+            <div class="user-image">
+                <img id="ctl15_userPhoto" src="/SOL/Themes/images/themes/sol-bak/avatar.png" style="border-width:0px;">
+            </div>
+            <div class="user">
+                <span title="Šíma&amp;nbsp;David" class="username">Šíma&nbsp;David</span>
+                <span id="ctl15_lblKategorie" title=" Žák/student" class="user-role"> Žák/student</span>
+            </div>
+        </div>
+
+        <div class="main-controls">
+
+            <div class="period-switch">
+                <a title="Klikněte pro přepnutí do jiného období" class="period" href="/SOL/App/Spolecne/KAA004_NastaveniProstr.aspx">2026<span class="alt">/</span>2027</a>
+            </div>
+            <div class="help">
+                <a id="ctl15_hlNapoveda" title="Klikněte pro zobrazení nápovědy k aplikaci" class="help open-popup" href="https://aplikace.skolaonline.cz/dokumentace/KS/verejnost/">Nápověda</a>
+            </div>
+            <div class="logout">
+                <a id="ctl15_hlOdhlasit" title="Klikněte pro odhlášení z aplikace" class="logout" href="../Logout.aspx">Odhlásit</a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    
+    <div class="main-menu">
+        
+        <nav style="float: none">
+            
+            <div id="wdmWrapper" style="overflow: visible">
+                
+                
+                
+                <span id="ctl15_lblNoveMenu" class="menuWrapper"><ul class="main-navigation"><li><a href="#">Docházka</a><ul class="dropdown-menu"><li><a href="#">Omlouvání absence</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/Dochazka/KZD003_Omluvenka.aspx">Elektronická omluvenka</a></li></ul></li><li><a href="#">Výpis docházky</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/DochSystem/KDS004_PrichodOdchodOsoby.aspx">Příchody/odchody žáka/studenta</a></li><li><a href="/SOL/App/Dochazka/KZD001_VypisKalendarni.aspx">Kalendářní žáka/studenta</a></li><li><a href="/SOL/App/Dochazka/KZD004_DochazkaKalendarni.aspx">Podrobný výpis docházky</a></li><li><a href="/SOL/App/Dochazka/KZD002_ZobrAbsPredmZaka.aspx">Absence v předmětech</a></li></ul></li></ul></li><li><a href="#">Hodnocení</a><ul class="dropdown-menu"><li><a href="#">Výpisy hodnocení</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/Hodnoceni/KZH001_HodnVypisStud.aspx">Hodnocení žáka/studenta</a></li><li><a href="/SOL/App/Hodnoceni/KZH003_PrubezneHodnoceni.aspx">Průběžné hodnocení</a></li><li><a href="/SOL/App/Hodnoceni/KZH002_ChovaniStudenta.aspx">Chování žáka/studenta</a></li></ul></li><li><a href="#">Slovní hodnocení</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/Hodnoceni/KHS005_VyplneniHodnoceni.aspx">Vyplnění hodnocení</a></li><li><a href="/SOL/App/Hodnoceni/KHS006_VypisHodnoceni.aspx">Výpis hodnocení</a></li></ul></li></ul></li><li><a href="#">Výuka</a><ul class="dropdown-menu"><li><a href="#">Úkoly</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/Ukoly/KUK005_UkolyStudenta.aspx">Domácí úkoly</a></li></ul></li><li><a href="#">Výukové zdroje</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/VyukoveZdroje/KVZ003_VyukoveZdroje.aspx">Výukové zdroje</a></li><li><a href="/SOL/App/VyukoveZdroje/KVZ015_VyslTestuStudenta.aspx">Výsledky testů žáka/studenta</a></li></ul></li><li><a href="#">Informace k výuce</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/Administrace/KZO001_SeznamUcitelu.aspx">Seznam vyučujících</a></li><li><a href="/SOL/App/Administrace/KZO004_InformaceKPredmetu.aspx">Informace k předmětu</a></li><li><a href="/SOL/App/Administrace/KZT001_ProbraneUcivo.aspx">Probrané učivo</a></li></ul></li></ul></li><li><a href="#">Komunikace</a><ul class="dropdown-menu"><li><a href="#">Zprávy</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/Zpravy/KZZ005_PrijateZpravy.aspx">Přijaté zprávy</a></li><li><a href="/SOL/App/Zpravy/KZZ007_OdeslatZpravu.aspx">Odeslat zprávu</a></li><li><a href="/SOL/App/Zpravy/KZZ008_OdeslaneZpravy.aspx">Odeslané zprávy</a></li></ul></li><li><a href="#">Služby Microsoft 365</a><ul class="dropdown-menu sub-menu"><li><a href="https://www.office.com/launch/onedrive" target="_blank">OneDrive</a></li></ul></li></ul></li><li><a href="#">Ostatní moduly</a><ul class="dropdown-menu"><li><a href="#">Osobní údaje</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/Administrace/KCI111_PrehledOsobnichUdaju.aspx">Přehled osobních údajů</a></li></ul></li><li><a href="#">Stravovací systém</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/DochSystem/KDS003_StravaOdkaz.aspx">Stravovací systém</a></li></ul></li><li><a href="#">Úložiště dokumentů</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/UlozisteDokumentu/KUD001_UlozisteDokumentu.aspx">Úložiště dokumentů</a></li></ul></li><li><a href="#">Konzultační hodiny</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/Konzultace/KKR002_KonzultacePrihlaseni.aspx">Přihlášení na konzultace</a></li></ul></li><li><a href="#">Zápis na školní akce</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/SkolniDruzina/KSD003_PrihlaskyNaKrouzky.aspx">Přehled akcí</a></li></ul></li><li><a href="#">Knihovna</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/Administrace/KCI055_KnihovnaRezervace.aspx">Rezervace knih</a></li><li><a href="/SOL/App/Administrace/KCI051_KnihovnaVypis.aspx">Výpis knihovny</a></li></ul></li><li><a href="#">Potvrzení o studiu</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/TiskoveSestavy/KTS014_PotvrzeniOStudiu.aspx">Potvrzení o studiu</a></li></ul></li><li><a href="#">Platby</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/Platby/KPL006_PlatbyStudenta.aspx">Výpis plateb žáka/studenta</a></li></ul></li><li><a href="#">GDPR</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/GDPR/KGD005_Souhlas.aspx">Souhlasy se zpracováním osobních údajů</a></li></ul></li></ul></li><li><a href="#">Správa aplikace</a><ul class="dropdown-menu"><li><a href="#">Nastavení</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/Administrace/KCI005_ParametryApl.aspx">Parametry aplikace</a></li><li><a href="/SOL/App/Spolecne/KAA003_NastaveniHesla.aspx">Změna hesla</a></li><li><a href="/SOL/App/Spolecne/KAA004_NastaveniProstr.aspx?FRM=../Default.aspx">Změna období</a></li><li><a href="/SOL/App/Spolecne/KAA026_PersSouhlas.aspx">Souhlas s&nbsp;personalizací obsahu</a></li></ul></li><li><a href="#">Statistiky a přehledy</a><ul class="dropdown-menu sub-menu"><li><a href="/SOL/App/Spolecne/KAA014_UspesnaPrihlaseni.aspx">Přehled přihlášení do aplikace</a></li></ul></li></ul></li></ul></span>
+            </div>
+        </nav>
+
+        
+
+    </div>
+
+    
+    <div class="developer-toolbar">
+        
+    </div>
+
+</header>
+
+<script>
+    function igMenuInitialize(menu, e) {
+        menu.__lastFocusedElementFocus = function () {
+        };
+    }
+
+    function VisibleOrnamentalImage() {
+        var require_width = $('.ornamental_image').outerWidth() + $('.menu ul').outerWidth() + 5;
+
+        if (require_width > $('.menu').outerWidth()) {
+            $('.ornamental_image').css('display', 'none');
+        } else {
+            $('.ornamental_image').css('display', 'block');
+        }
+    }
+
+    $(document).ready(function () {
+        var num = $('.menu ul li').length;
+        var percent = 100 / num;
+        $('.menu ul').find('li').width(percent + '%');
+        $('.menu ul').css('maxWidth', (num * 81) + 'px');
+
+        VisibleOrnamentalImage();
+        $(window).resize(function () {
+            VisibleOrnamentalImage();
+        });
+    }); 
+
+
+    $('.help.open-popup').click(function (e) {
+        e.preventDefault();
+        var HelpWindow = window.open(this.href, 'HelpWindow', 'toolbar=yes,scrollbars=yes,resizable=yes,width=640,height=480');
+        if (HelpWindow) HelpWindow.focus();
+    });
+
+
+</script>
+
+<!-- JS skript pro ovladani chovani hlavniho menu -->
+<script>
+/*
+ * Chování menu:
+ *
+ * Level 1 (hlavní menu):
+ *   - Submenu se otevře na KLIK (ne hover)
+ *   - Po otevření lze další level 1 položky otevírat hoverem
+ *   - Zavře se při kliku mimo menu nebo opuštění prostoru menu
+ *
+ * Level 2 (submenu):
+ *   - Otevře se na hover nad level 1 položkou (pokud bylo na některou level 1 položku již kliknuto)
+ *   - Zavře se při přejezdu na jinou level 2 položku stejné úrovně
+ *   - Zavře se při přejezdu na parent level 1
+ *   - Zůstává otevřené při přejezdu do vlastního level 3 submenu
+ *
+ * Level 3 (sub-submenu):
+ *   - Otevře se na hover nad level 2 položkou
+ *   - ZŮSTÁVÁ otevřené při opuštění (nezavírá se hned)
+ *   - Zavře se pouze při opuštění parent level 2 položky
+ *
+ * Celé menu se zavře při kliku mimo prostor menu
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    const firstLevelMenuItems = document.querySelectorAll('.main-navigation > li');
+    const secondLevelMenuItems = document.querySelectorAll('.main-navigation > li > ul > li');
+    const thirdLevelMenuItems = document.querySelectorAll('.main-navigation > li > ul > li > ul > li');
+
+    // flag pro uchování informace o kliku na první úroveň
+    // pro první rozbalení menu musí uživatel kliknout na položku první úrovně, následně už stačí jen přejíždět kurzorem, dokud z prostoru menu opět nevyjede
+    let allowMenu1OpenWithHover = false;
+
+    // Flag pro sledování, jestli jsme v level 3 menu
+    // Potřebujeme ho, protože při opuštění level 3 se vyvolá i mouseleave na level 2 (level 3 je child level 2)
+    let isInLevel3 = false;
+
+    // Helper funkce pro zavření child menu položek
+    const closeChildMenus = (parentElement) => {
+        const childMenuItems = parentElement.querySelectorAll('li > ul > li');
+        childMenuItems.forEach(childItem => childItem.classList.remove('menu-open'));
+    };
+
+    // Helper funkce pro zavření sourozenců (siblings) na stejné úrovni
+    const closeSiblings = (currentItem, parentSelector) => {
+        const siblings = currentItem.closest(parentSelector).querySelectorAll('li');
+        siblings.forEach(sibling => {
+            if (sibling !== currentItem) {
+                sibling.classList.remove('menu-open');
+            }
+        });
+    };
+
+    firstLevelMenuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // zavre jina menu na stejne urovni, aby bylo vzdy otevrene jen jedno
+            firstLevelMenuItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('menu-open');
+                }
+            });
+
+            // pridame css class, ktera nam zajisti, ze menu zustane oteverne i bez kurzoru nad nim
+            this.classList.add('menu-open');
+
+            // nastavíme flag, že jsme klikli na první úroveň a můžeme tedy další menu první úrovně zobrazovat jen najetím kurzoru
+            allowMenu1OpenWithHover = true;
+        });
+        
+        item.addEventListener('mouseenter', function(e) {
+            // pokud jsme jiz jednou klikli, muzeme jine polozky urovne 1 otevirat jen pri najeti kurzoru - klik je potreba jen pro prvotni otevreni
+            if(allowMenu1OpenWithHover){
+                // zavre jina menu na stejne urovni, aby bylo vzdy otevrene jen jedno
+                firstLevelMenuItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('menu-open');
+                    }
+                });
+
+                // zavřeme všechna level 2 a level 3 menu - po najetí na menu nejvyšší úrovně nemá být nic otevřené
+                document.querySelectorAll('.main-navigation .menu-open').forEach(menuItem => {
+                    menuItem.classList.remove('menu-open');
+                });
+
+                // pridame css class, ktera nam zajisti, ze menu zustane oteverne i bez kurzoru nad nim
+                this.classList.add('menu-open');
+            }
+        });
+        
+        item.addEventListener('mouseleave', function(e) {
+            const menuElement = this.closest('.main-navigation');
+            // Zkontrolujeme, jestli je nějaké level 2 nebo level 3 menu otevřené
+            const hasOpenMenu = document.querySelector('.main-navigation .menu-open') !== null;
+
+            if(menuElement && e.relatedTarget && menuElement !== e.relatedTarget && !menuElement.contains(e.relatedTarget) && !hasOpenMenu){
+                //opoustime prostor menu a nemame nic otevrene - priste bude pro rozbaleni nutne zase na polozku prvni urovne kliknout
+                allowMenu1OpenWithHover = false;
+            }
+        });    
+    });
+    
+    secondLevelMenuItems?.forEach(item => {
+        item.addEventListener('mouseenter', function(e) {
+            // zavre jina menu na stejne urovni v ramci stejneho rodice, aby bylo vzdy otevrene jen jedno
+            closeSiblings(this, 'ul');
+
+            // pridame css class, ktera nam zajisti, ze menu zustane oteverne i bez kurzoru nad nim
+            this.classList.add('menu-open');
+
+            // Reset flagu - jsme v level 2, ne v level 3
+            isInLevel3 = false;
+        });
+
+        item.addEventListener('mouseleave', function(e) {
+            const parentLi = this.closest('.main-navigation > li');
+            const parentA = parentLi.querySelector('a');
+            const relatedTarget = e.relatedTarget;
+
+            // Zkontrolujeme, jestli opouštíme do vlastního level 3 submenu
+            const level3Submenu = this.querySelector('ul');
+            const goingToOwnLevel3 = relatedTarget && level3Submenu && level3Submenu.contains(relatedTarget);
+
+            // pokud se presouvame kurzorem o uroven vyse, zavreme menu obsahujici tuto polozku (= zavreme rodice)
+            if (relatedTarget && parentLi && parentA === relatedTarget) {
+                parentLi.classList.remove('menu-open');
+                closeChildMenus(parentLi);
+                isInLevel3 = false;
+                return;
+            }
+
+            // Pokud jdeme do vlastního level 3 submenu, necháme level 2 otevřené
+            if (goingToOwnLevel3) {
+                return;
+            }
+
+            // Pokud jsme v level 3, NEzavíráme level 2 (protože leave z level 3 vyvolá i leave z level 2)
+            if (isInLevel3) {
+                return;
+            }
+
+            // Jinak zavřeme level 2 i level 3
+            this.classList.remove('menu-open');
+            closeChildMenus(parentLi);
+        });
+    });
+        
+    // Level 3 se zavře pouze když opustíme level 2 parent
+    thirdLevelMenuItems?.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            // Nastavíme flag, že jsme v level 3
+            isInLevel3 = true;
+        });
+
+        item.addEventListener('mouseleave', function(e) {
+            const relatedTarget = e.relatedTarget;
+            const level3Submenu = this.closest('ul');
+            const parentLevel2Li = this.closest('.main-navigation > li > ul > li');
+
+            // Zkontrolujeme, jestli se vracíme zpět na parent level 2 (mimo level 3 submenu)
+            const goingBackToLevel2 = relatedTarget && parentLevel2Li &&
+                                      parentLevel2Li.contains(relatedTarget) &&
+                                      !level3Submenu.contains(relatedTarget);
+
+            if (goingBackToLevel2) {
+                // Vracíme se na level 2, zresetujeme flag
+                isInLevel3 = false;
+            }
+        });
+    });
+    
+    //pokud klikneme mimo prostor menu, vsechna menu zavreme a odebereme priznak o predchozim kliknuti do menu - pro nove otevreni bude nutny klik, prejeti kurzoru nebude stacit
+    document.addEventListener('click', (e) => {
+        // kontrola, jestli byl klik mimo prvek hlavniho menu
+        if (!e.target.closest('.main-navigation')) {
+            firstLevelMenuItems.forEach(item => {
+                item.classList.remove('menu-open');
+            });
+            allowMenu1OpenWithHover = false;
+        }
+    });
+});
+</script>
+
+<span id="ctl15_lblPocetMinutDoOdhlaseniValue" title="Počet minut zbývajících do automatického odhlášení z aplikace" class="HeaderIconLabel" style="display: none">30<br>min</span>
+
+<script type="text/javascript">
+
+    function okScript() {
+        var url = 'https://aplikace.skolaonline.cz/SOL/App/Zpravy/KZZ005_PrijateZpravy.aspx?MOD=NEPRECTENE';
+        $(location).attr('href', url);
+    }
+
+    function cancelSkript() {
+        $find('mpeSpustNeprecteneZpravyBehavior').hide();
+        return true;
+    }
+
+</script>
+<div>
+	
+    <input type="submit" name="ctl15$NeprecteneZpravyOtazka$btnSpustNeprecteneZpravyTargetControl" value="" id="ctl15_NeprecteneZpravyOtazka_btnSpustNeprecteneZpravyTargetControl" style="display: none;">
+    
+
+    <div id="ctl15_NeprecteneZpravyOtazka_pnlSpustNeprecteneZpravy" class="modalPopup" style="display: none; position: fixed; z-index: 100001;">
+		
+        <div class="modalContent">
+                <div id="ctl15_NeprecteneZpravyOtazka_pnlSpustNeprecteneZpravyDragHandle" class="modalPopupDragHandle">
+			
+                    <span>Nepřečtené zprávy</span>
+                
+		</div>
+                <div class="modalTextContainer">
+                    <span>Máte nepřečtené zprávy. Chcete je nyní zobrazit?</span>
+                </div>
+                <div class="modalButtonContainer">
+                    <button type="submit" name="ctl15$NeprecteneZpravyOtazka$btnAno" value="Ano, zobrazit" id="ctl15_NeprecteneZpravyOtazka_btnAno" class="ButtonLabel SpaceBeforeButton sol-btn sol-btn-show">Ano, zobrazit</button>
+                    <button type="submit" name="ctl15$NeprecteneZpravyOtazka$btnPozdeji" value="Ne, přečtu si je později" id="ctl15_NeprecteneZpravyOtazka_btnPozdeji" class="ButtonLabel SpaceBeforeButton sol-btn sol-btn-show">Ne, přečtu si je později</button>
+                </div>
+        </div>
+    
+	</div>
+
+<div id="mpeSpustNeprecteneZpravyBehavior_backgroundElement" class="modalBackground" style="display: none; position: fixed; left: 0px; top: 0px; z-index: 10000;"></div></div>
+
+
+
+
+
+
+
+
+                <!-- TOP END -->
+            </div>
+
+            <div class="sol-body-wrapper">
+                <div class="sol-body">
+
+                    <div class="sol-body-left-wrapper">
+                        <div class="left_frame sol-body-left">
+                            <!-- LEFT BEGIN -->
+                            
+                            
+<table border="0" class="left_frame_panel">
+	<tbody><tr>
+		
+		<td class="left_frame_area_header">
+		  <span id="calendarPart_CCALabel3">Výběr data</span>
+		</td>
+		
+	</tr>
+	<tr>
+		<td class="left_frame_area" align="center">
+			<!-- LEFT CONTENT BEGIN -->
+			
+<input type="hidden" name="calendarPart_kalendar" id="calendarPart_kalendar" value="%3Cx%20PostData%3D%222026x9x2026x9x3%22%3E%3C/x%3E"><table cellspacing="0" cellpadding="0" id="igcalcalendarPart_kalendar" style="" class="ig_Control igcal_Control" calid="calendarPart_kalendar">
+	<tbody><tr><td>
+		<table width="100%" height="100%" cellspacing="0" cellpadding="2"><tbody><tr>
+			<td nowrap="nowrap" align="center" id="calendarPart_kalendar_500" class="ig_Button igcal_NextPrev" calid="calendarPart_kalendar,500"><img border="0" src="../../Themes/sol-bak/Infragistics/Default/images/ig_cal_prev.gif" alt="" align="middle"></td>
+			<td nowrap="nowrap" align="center" width="100%" class="ig_Header igcal_Header">&nbsp;
+				<select id="calendarPart_kalendar_504" class="ig_DropDown igcal_DropDown" calid="calendarPart_kalendar,504"><option>leden</option><option>únor</option><option>březen</option><option>duben</option><option>květen</option><option>červen</option><option>červenec</option><option>srpen</option><option selected="">září</option><option>říjen</option><option>listopad</option><option>prosinec</option></select>&nbsp;
+				<select id="calendarPart_kalendar_506" class="ig_DropDown igcal_DropDown" calid="calendarPart_kalendar,506"><option selected="">2026</option><option>2027</option></select>&nbsp;
+			</td>
+			<td nowrap="nowrap" align="center" id="calendarPart_kalendar_502" class="ig_Button igcal_NextPrev" calid="calendarPart_kalendar,502"><img border="0" src="../../Themes/sol-bak/Infragistics/Default/images/ig_cal_next.gif" alt="" align="middle"></td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td height="100%">
+		<table width="100%" height="100%" cellspacing="0" cellpadding="2" class="igcal_Calendar" rules="none" border="0" id="calendarPart_kalendar_512" calid="calendarPart_kalendar,512">
+		<tbody><tr id="calendarPart_kalendar_514" calid="calendarPart_kalendar,514"><td class="ig_Header igcal_DOW" align="center">po</td><td class="ig_Header igcal_DOW" align="center">út</td><td class="ig_Header igcal_DOW" align="center">st</td><td class="ig_Header igcal_DOW" align="center">čt</td><td class="ig_Header igcal_DOW" align="center">pá</td><td class="ig_Header igcal_DOW" align="center">so</td><td class="ig_Header igcal_DOW" align="center">ne</td>		</tr>
+		<tr><td id="calendarPart_kalendar_d0" align="center" class="igcal_Day igcal_OtherMonthDay" calid="calendarPart_kalendar,0">31</td><td id="calendarPart_kalendar_d1" align="center" class="igcal_Day" calid="calendarPart_kalendar,1">1</td><td id="calendarPart_kalendar_d2" align="center" class="igcal_Day" calid="calendarPart_kalendar,2">2</td><td id="calendarPart_kalendar_d3" align="center" class="igcal_Day igcal_TodayDay ig_Selected igcal_SelectedDay" calid="calendarPart_kalendar,3">3</td><td id="calendarPart_kalendar_d4" align="center" class="igcal_Day" calid="calendarPart_kalendar,4">4</td><td id="calendarPart_kalendar_d5" align="center" class="igcal_Day igcal_WeekendDay" calid="calendarPart_kalendar,5">5</td><td id="calendarPart_kalendar_d6" align="center" class="igcal_Day igcal_WeekendDay" calid="calendarPart_kalendar,6">6</td></tr>
+		<tr><td id="calendarPart_kalendar_d7" align="center" class="igcal_Day" calid="calendarPart_kalendar,7">7</td><td id="calendarPart_kalendar_d8" align="center" class="igcal_Day" calid="calendarPart_kalendar,8">8</td><td id="calendarPart_kalendar_d9" align="center" class="igcal_Day" calid="calendarPart_kalendar,9">9</td><td id="calendarPart_kalendar_d10" align="center" class="igcal_Day" calid="calendarPart_kalendar,10">10</td><td id="calendarPart_kalendar_d11" align="center" class="igcal_Day" calid="calendarPart_kalendar,11">11</td><td id="calendarPart_kalendar_d12" align="center" class="igcal_Day igcal_WeekendDay" calid="calendarPart_kalendar,12">12</td><td id="calendarPart_kalendar_d13" align="center" class="igcal_Day igcal_WeekendDay" calid="calendarPart_kalendar,13">13</td></tr>
+		<tr><td id="calendarPart_kalendar_d14" align="center" class="igcal_Day" calid="calendarPart_kalendar,14">14</td><td id="calendarPart_kalendar_d15" align="center" class="igcal_Day" calid="calendarPart_kalendar,15">15</td><td id="calendarPart_kalendar_d16" align="center" class="igcal_Day" calid="calendarPart_kalendar,16">16</td><td id="calendarPart_kalendar_d17" align="center" class="igcal_Day" calid="calendarPart_kalendar,17">17</td><td id="calendarPart_kalendar_d18" align="center" class="igcal_Day" calid="calendarPart_kalendar,18">18</td><td id="calendarPart_kalendar_d19" align="center" class="igcal_Day igcal_WeekendDay" calid="calendarPart_kalendar,19">19</td><td id="calendarPart_kalendar_d20" align="center" class="igcal_Day igcal_WeekendDay" calid="calendarPart_kalendar,20">20</td></tr>
+		<tr><td id="calendarPart_kalendar_d21" align="center" class="igcal_Day" calid="calendarPart_kalendar,21">21</td><td id="calendarPart_kalendar_d22" align="center" class="igcal_Day" calid="calendarPart_kalendar,22">22</td><td id="calendarPart_kalendar_d23" align="center" class="igcal_Day" calid="calendarPart_kalendar,23">23</td><td id="calendarPart_kalendar_d24" align="center" class="igcal_Day" calid="calendarPart_kalendar,24">24</td><td id="calendarPart_kalendar_d25" align="center" class="igcal_Day" calid="calendarPart_kalendar,25">25</td><td id="calendarPart_kalendar_d26" align="center" class="igcal_Day igcal_WeekendDay" calid="calendarPart_kalendar,26">26</td><td id="calendarPart_kalendar_d27" align="center" class="igcal_Day igcal_WeekendDay" calid="calendarPart_kalendar,27">27</td></tr>
+		<tr><td id="calendarPart_kalendar_d28" align="center" class="igcal_Day" calid="calendarPart_kalendar,28">28</td><td id="calendarPart_kalendar_d29" align="center" class="igcal_Day" calid="calendarPart_kalendar,29">29</td><td id="calendarPart_kalendar_d30" align="center" class="igcal_Day" calid="calendarPart_kalendar,30">30</td><td id="calendarPart_kalendar_d31" align="center" class="igcal_Day igcal_OtherMonthDay" calid="calendarPart_kalendar,31">1</td><td id="calendarPart_kalendar_d32" align="center" class="igcal_Day igcal_OtherMonthDay" calid="calendarPart_kalendar,32">2</td><td id="calendarPart_kalendar_d33" align="center" class="igcal_Day igcal_WeekendDay igcal_OtherMonthDay" calid="calendarPart_kalendar,33">3</td><td id="calendarPart_kalendar_d34" align="center" class="igcal_Day igcal_WeekendDay igcal_OtherMonthDay" calid="calendarPart_kalendar,34">4</td></tr>
+		<tr><td id="calendarPart_kalendar_d35" align="center" class="igcal_Day igcal_OtherMonthDay" calid="calendarPart_kalendar,35">5</td><td id="calendarPart_kalendar_d36" align="center" class="igcal_Day igcal_OtherMonthDay" calid="calendarPart_kalendar,36">6</td><td id="calendarPart_kalendar_d37" align="center" class="igcal_Day igcal_OtherMonthDay" calid="calendarPart_kalendar,37">7</td><td id="calendarPart_kalendar_d38" align="center" class="igcal_Day igcal_OtherMonthDay" calid="calendarPart_kalendar,38">8</td><td id="calendarPart_kalendar_d39" align="center" class="igcal_Day igcal_OtherMonthDay" calid="calendarPart_kalendar,39">9</td><td id="calendarPart_kalendar_d40" align="center" class="igcal_Day igcal_WeekendDay igcal_OtherMonthDay" calid="calendarPart_kalendar,40">10</td><td id="calendarPart_kalendar_d41" align="center" class="igcal_Day igcal_WeekendDay igcal_OtherMonthDay" calid="calendarPart_kalendar,41">11</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td nowrap="nowrap" class="ig_Footer igcal_Footer">
+<table id="calendarPart_kalendar_tabSelectiponMode" cellspacing="0" cellpadding="0" border="0" style="border-width:0px;width:100%;border-collapse:collapse;">
+	<tbody><tr>
+		<td align="center"><table id="calendarPart_kalendar_RBSelectionMode" class="FieldLabel" border="0">
+			<tbody><tr>
+				<td><input id="calendarPart_kalendar_RBSelectionMode_0" type="radio" name="calendarPart$kalendar$RBSelectionMode" value="Week" checked="checked"><label for="calendarPart_kalendar_RBSelectionMode_0">Týden</label></td><td><input id="calendarPart_kalendar_RBSelectionMode_1" type="radio" name="calendarPart$kalendar$RBSelectionMode" value="Month" onclick="javascript:setTimeout('__doPostBack(\'calendarPart$kalendar$RBSelectionMode$1\',\'\')', 0)"><label for="calendarPart_kalendar_RBSelectionMode_1">Měsíc</label></td>
+			</tr>
+		</tbody></table></td>
+	</tr>
+</tbody></table><table id="calendarPart_kalendar_tabCalendarSelectToday" cellspacing="0" cellpadding="0" border="0" style="border-width:0px;width:100%;border-collapse:collapse;">
+	<tbody><tr>
+		<td align="center" style="padding-bottom:10px;"><a onclick="SetCalendarTodayDate('calendarPart$kalendar'); return false;" id="calendarPart_kalendar_hlSelectToday" disabled="disabled" class="FieldLabel calendarSelectTodayButton" aria-disabled="true">Přejít na dnes</a></td>
+	</tr>
+</tbody></table>
+		</td></tr>
+</tbody></table>
+
+			<!-- LEFT CONTENT END -->
+		</td>
+	</tr>
+</tbody></table>
+
+                            
+
+
+
+                            <!-- LEFT END -->
+                        </div>
+                    </div>
+
+                    <div class="sol-body-content-wrapper">
+                        <div class="sol-notifications">
+                            <!-- MESSAGE BEGIN -->
+                            
+                            <!-- MESSAGE END -->
+                        </div>
+
+                        <div class="content_frame sol-body-content">
+                            <div>
+                                <div class="sol-body-content-top">
+                                    <!-- CONTENT HEADER BEGIN -->
+                                    <table cellspacing="0" cellpadding="0" border="0" width="100%" class="content_frame_area_header">
+  <tbody><tr>
+    <td width="100%">
+      <div class="form-title"><h1>
+Kalendář      </h1></div>
+    </td>
+<td><input type="submit" name="BtnTisk" value="" id="BtnTisk" class="sol-btn-print-form" title="Tisk stránky"></td>
+ </tr>
+</tbody></table>
+                                    <!-- CONTENT HEADER END -->
+                                </div>
+
+                                <div class="main_content_frame sol-body-content-main">
+                                    <!-- MAIN CONTENT BEGIN -->
+
+                                    <div class="sol-main-content">
+                                        <div id="PPlan">
+	
+                                            <div id="PanelNadpis">
+		
+                                                <table id="Table4" style="width: 100%;">
+                                                    <tbody><tr>
+                                                        <td>
+                                                            <span id="CCALabel4" class="FieldLabel">Třída:</span>
+                                                            <span id="LBLTrida" class="FieldValue">1.IT</span>
+                                                            <span id="CCALabel2" class="FieldValue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                            <span id="CCALabel6" class="FieldLabel">Žák:</span>
+                                                            <span id="LBLStudent" class="FieldValue">Šíma David</span>
+                                                        </td>
+                                                        <td align="right">
+                                                            <span id="lblSluzbaNadpis" class="FieldLabel">Pořádková služba:</span>
+                                                            <span id="lblSluzbaNazev" class="FieldValue">Bauer T., Bui H.</span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody></table>
+                                            
+	</div>
+                                            <table id="CCADynamicCalendarTable_FixedTableHeader" class="DctTable fixedtableheader CCADynamicCalendarTable_FixedTableHeader" border="0" style="position: absolute; top: 0px; left: 0px; width: 1132px; display: none;"><tbody><tr>
+			<th style="font-weight: normal; width: 36px;">&nbsp;</th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">0</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">07:00 - 07:45</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">1</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">08:00 - 08:45</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">2</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">08:55 - 09:40</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">3</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">09:50 - 10:35</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">4</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">10:55 - 11:40</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">5</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">11:50 - 12:35</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">6</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">12:45 - 13:30</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">7</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">13:40 - 14:25</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">8</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">14:30 - 15:15</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">9</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">15:20 - 16:05</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">10</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">16:10 - 16:55</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">11</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">17:00 - 17:45</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">12</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">17:50 - 18:35</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">13</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">18:40 - 19:25</td></tr></tbody></table></th>
+		</tr></tbody></table><table id="CCADynamicCalendarTable" class="DctTable" border="0">
+		<tbody><tr>
+			<th style="font-weight: normal; width: 36px;">&nbsp;</th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">0</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">07:00 - 07:45</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">1</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">08:00 - 08:45</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">2</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">08:55 - 09:40</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">3</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">09:50 - 10:35</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">4</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">10:55 - 11:40</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">5</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">11:50 - 12:35</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">6</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">12:45 - 13:30</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">7</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">13:40 - 14:25</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">8</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">14:30 - 15:15</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">9</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">15:20 - 16:05</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">10</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">16:10 - 16:55</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">11</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">17:00 - 17:45</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">12</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">17:50 - 18:35</td></tr></tbody></table></th><th style="font-weight: normal; width: 68px;"><table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td class="KuvHeaderNadpis">13</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">18:40 - 19:25</td></tr></tbody></table></th>
+		</tr><tr class="RowOdd">
+			<th rowspan="2" style="font-weight:normal;"><table cellspacing="0" cellpadding="0"><tbody><tr><td align="center" class="KuvHeaderNadpis">Út</td></tr><tr><td nowrap="" align="center" class="KuvHeaderText">1.9.</td></tr></tbody></table></th><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tbody><tr>
+					<td id="A14804584#1#1#0" class="KuvSkolniAkceHodina" onmouseover="onMouseOverTooltip('Třídnická hodina ','Učitel:~Bacílek K., Balák J., Beránek K., Brettschneiderová Z., Cimrhaklová L., Červená V., Dobrovolný T., Endal D., Fialová st. D., Fletterová Horová M., Gubran Š., Halová D., Hrachová H., Hůdová I., Humeníková E., Illingerová H., Jandová Z., Jirásková J., Jirková D., Jurčík O., Kopecká K., Kovandová  K., Kuklová D., Marková S., Matějková B., Mikulová G., Mondek J., Müller Z., Ogorková K., Petrík R., Plaňanská S., Procházka P., Růžička J., Skořepa V., Sobotka J., Speierlová R., Straka M., Strapková J., Štádler M., Tatarová  S., Třešková J., Tučák V., Učíková P., Valinová H., Vančurová J., Wunderlich R.~Třída:~1.AGP, 1.CUK-REZ, 1.DRV-ZPR, 1.ELM, 1.EP, 1.INS, 1.IT, 1.KAD, 1.MOV, 1.OZS, 1.ME, 1.PO, 1.PRO, 1.ST, 1.STP-POV, 1.TRU, 1.USH, 1.ZAH-ZFA, 2.AGP, 2.CUK-REZ, 2.DRV-ZPR, 2.ELM, 2.EP, 2.INS, 2.ITA, 2.ITB-ST, 2.KAD, 2.ME-USH, 2.MOV, 2.OZS, 2.PRO, 2.STP-POV, 2.TRU, 2.ZAH-ZFA, 3.AGP, 3.CUK-REZ, 3.DRV-ZPR, 3.ELM, 3.EP-ST, 3.INS, 3.IT, 3.KAD, 3.ME-USH, 3.MOV, 3.OZS, 3.PRO, 3.STP-POV, 3.TRU, 3.ZAH-ZFA, 4.AGP, 4.EP, 4.IT, 4.ME, 4.ST, 4.USH~Žáci:~1.AGP (celá třída), 1.CUK-REZ (celá třída), 1.DRV-ZPR (celá třída), 1.ELM (celá třída), 1.EP (celá třída), 1.INS (celá třída), 1.IT (celá třída), 1.KAD (celá třída), 1.MOV (celá třída), 1.OZS (celá třída), 1.ME (celá třída), 1.PO (celá třída), 1.PRO (celá třída), 1.ST (celá třída), 1.STP-POV (celá třída), 1.TRU (celá třída), 1.USH (celá třída), 1.ZAH-ZFA (celá třída), 2.AGP (celá třída), 2.CUK-REZ (celá třída), 2.DRV-ZPR (celá třída), 2.ELM (celá třída), 2.EP (celá třída), 2.INS (celá třída), 2.ITA (celá třída), 2.ITB-ST (celá třída), 2.KAD (celá třída), 2.ME-USH (celá třída), 2.MOV (celá třída), 2.OZS (celá třída), 2.PRO (celá třída), 2.STP-POV (celá třída), 2.TRU (celá třída), 2.ZAH-ZFA (celá třída), 3.AGP (celá třída), 3.CUK-REZ (celá třída), 3.DRV-ZPR (celá třída), 3.ELM (celá třída), 3.EP-ST (celá třída), 3.INS (celá třída), 3.IT (celá třída), 3.KAD (celá třída), 3.ME-USH (celá třída), 3.MOV (celá třída), 3.OZS (celá třída), 3.PRO (celá třída), 3.STP-POV (celá třída), 3.TRU (celá třída), 3.ZAH-ZFA (celá třída), 4.AGP (celá třída), 4.EP (celá třída), 4.IT (celá třída), 4.ME (celá třída), 4.ST (celá třída), 4.USH (celá třída)~Cyklus:~bez cyklů~Den (vyuč. hodina):~Út 1.9. (1)~Probrané učivo:~Zahájení školního roku 2026/2027; Zahájení školního roku 2026/2027; Třídnická hodina; Třídnická hodina, zahájení školního roku; Třídnická hodina; Třídnická hodina - Zahájení školního roku 2026/2027; Zahájení školního roku 2026-2027; Třídnická hodina; Zahájení školního roku 2026/2027; Třídnická hodina; Třídnická hodina; Zahájení školního roku 2026/2027; Zahájení školního roku 2026/2027; Třídnická hodina; Zahájení školního roku 2026/2027.; Třídnická hodina - Zahájení školního roku 2026/2027; Zahájení školního roku 2026/2027; Zahájení školního roku 2026/2027; Zahájení školního roku 2026/2027.; Třídnická hodina; Zahájení školního roku 2026/2027; Třídnická hodina - Zahájení školního roku 2026/2027; Zahájení školního roku 2026/2027; Zahájení školního roku 2026/27; Zahájení školního roku 2026/2027; Třídnická hodina Zahájení školního roku 2026/2027; Zahájení školního roku 2026/2027; Třídnická hodina - zahájení školního roku 2026/2027; Třídnická hodina; Zahájení školního roku 2026/2027; Zahájení školního roku 2026/2027; Třídnická hodina; Zahájení školnhío roku 2026/2027; Zahájení školního roku 2026/2027; Zahájení školnhío roku 2026/2027; Zahájení školního roku 2026/27; Zahájení školního roku 2026/2027; Třídnická hodina - organizační pokyny k zahájení školního roku; Třídnická hodina; Třídnická hodina-Zahájení školního roku 2026/2027; Třídnická hodina-Zahájení školního roku 2026/2027; Zahájení školního roku2026/2027; Zahájení školního roku 2026/2027; Zahájení školního roku 2026/2027; Třídnická hodina; Zahájení školního roku 2026/2027; Zahájení školního roku 2026/2027; Zahájení školního roku 2026/27; Zahájení školního roku 2026/27; Třídnická hodina - Zahájení školního roku 2026/2027; Zahájení školního roku 2026/2027.; Třídnická hodina; Zahájení školního roku 2026/2027; Třídnická hodina - zahájení školního roku~Poznámka:~Zahájení školního roku 2026/2027.; Žáci byli poučeni o přecházení koridorem u školy Komenského, byly rozdány dokumenty k podpisu, byly rozdány potvrzení o studiu; Zahájení školního roku 2026 - 2027; Zahájení školního roku 2026/2027; Rozdané tiskopisy k vyplnění - GDPR, OPL, omouvání, školní matrika, rodičáky, srpš -200,-; Zahájení školního roku 2026/2027; Zahájení školního roku 2025/2026; Žáci byli poučeni o přecházení koridorem u školy Komenského, byly rozdány dokumenty k podpisu, byly rozdány potvrzení o studiu')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">Třídnická hodina</span><span class="KuvBunkaRozvrhText">1.AGP, 1.CUK-REZ, 1.DRV-ZPR, 1.ELM, 1.EP, 1.INS, 1.IT, 1.KAD, 1.MOV, 1.OZS, 1.ME, 1.PO, 1.PRO, 1.ST, 1.STP-POV, 1.TRU, 1.USH, 1.ZAH-ZFA, 2.AGP, 2.CUK-REZ, 2.DRV-ZPR, 2.ELM, 2.EP, 2.INS, 2.ITA, 2.ITB-ST, 2.KAD, 2.ME-USH, 2.MOV, 2.OZS, 2.PRO, 2.STP-POV, 2.TRU, 2.ZAH-ZFA, 3.AGP, 3.CUK-REZ, 3.DRV-ZPR, 3.ELM, 3.EP-ST, 3.INS, 3.IT, 3.KAD, 3.ME-USH, 3.MOV, 3.OZS, 3.PRO, 3.STP-POV, 3.TRU, 3.ZAH-ZFA, 4.AGP, 4.EP, 4.IT, 4.ME, 4.ST, 4.USH</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tbody><tr>
+					<td id="A14804274#41#D#2#0" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip('ČJL (Český jazyk a literatura) ','Učitel:~Kovandová  K.~Třída:~&lt;span class=AbsZdroj&gt;1.IT&lt;/span&gt;~Žáci:~&lt;span class=AbsZdroj&gt;1.IT (celá třída)&lt;/span&gt;~Učebna:~M2.36~Cyklus:~--~Den (vyuč. hodina):~Út 1.9. (2)~Je suplována hodinami:~Hodina odpadá~Důvod absence:~Zahájení školního roku 2026/2027, třídnické hodiny')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">ČJL</span><span class="KuvBunkaRozvrhText"><span class="AbsZdroj">1.IT</span><br>M2.36</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" colspan="2" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:156px;">
+				<tbody><tr>
+					<td id="A14804076#11#D#3#0" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip('IKT (Informační a komunikační technologie) ','Učitel:~Jirásková J.~Třída:~&lt;span class=AbsZdroj&gt;1.IT&lt;/span&gt;~Žáci:~&lt;span class=AbsZdroj&gt;1.IT (IKT2)&lt;/span&gt;~Učebna:~K1.12~Cyklus:~--~Den (vyuč. hodina):~Út 1.9. (3)~Je suplována hodinami:~Hodina odpadá~Důvod absence:~Zahájení školního roku 2026/2027, třídnické hodiny')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">IKT</span><span class="KuvBunkaRozvrhText"><span class="AbsZdroj">1.IT</span><br>K1.12</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" colspan="2" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:156px;">
+				<tbody><tr>
+					<td id="A14803888#11#D#5#0" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip('HRW (Hardware) ','Učitel:~Rochel P.~Třída:~&lt;span class=AbsZdroj&gt;1.IT&lt;/span&gt;~Žáci:~&lt;span class=AbsZdroj&gt;1.IT (celá třída)&lt;/span&gt;~Učebna:~K1~Cyklus:~--~Den (vyuč. hodina):~Út 1.9. (5)~Je suplována hodinami:~Hodina odpadá~Důvod absence:~Zahájení školního roku 2026/2027, třídnické hodiny')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">HRW</span><span class="KuvBunkaRozvrhText"><span class="AbsZdroj">1.IT</span><br>K1</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td>
+		</tr><tr class="RowOdd">
+			<td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tbody><tr>
+					<td id="A14803851#32#D#1#0" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip('APS (Aplikační software) ','Učitel:~&lt;span class=AbsZdroj&gt;Procházka P.&lt;/span&gt;~Třída:~&lt;span class=AbsZdroj&gt;1.IT&lt;/span&gt;~Žáci:~&lt;span class=AbsZdroj&gt;1.IT (celá třída)&lt;/span&gt;~Učebna:~H303~Cyklus:~--~Den (vyuč. hodina):~Út 1.9. (1)~Je suplována hodinami:~Hodina odpadá')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">APS</span><span class="KuvBunkaRozvrhText"><span class="AbsZdroj">1.IT</span><br>H303</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td>
+		</tr><tr class="RowEven">
+			<th rowspan="2" style="font-weight:normal;"><table cellspacing="0" cellpadding="0"><tbody><tr><td align="center" class="KuvHeaderNadpis">St</td></tr><tr><td nowrap="" align="center" class="KuvHeaderText">2.9.</td></tr></tbody></table></th><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" colspan="4" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:312px;">
+				<tbody><tr>
+					<td id="A14804768#1#1#1" class="KuvSkolniAkceHodina" onmouseover="onMouseOverTooltip('Třídnické hodiny ','Učitel:~Bacílek K., Balák J., Beránek K., Červená V., Dobrovolný T., Endal D., Fialová st. D., Gubran Š., Halová D., Hrachová H., Hůdová I., Humeníková E., Illingerová H., Jirásková J., Jirková D., Jurčík O., Kopecká K., Kovandová  K., Kubínová A., Kuklová D., Marková S., Mikulová G., Mondek J., Müller Z., Ogorková K., Petrík R., Plaňanská S., Procházka P., Růžička J., Sobotka J., Straka M., Strapková J., Štádler M., Tatarová  S., Třešková J., Učíková P., Vančurová J., Wunderlich R.~Třída:~1.AGP, 1.CUK-REZ, 1.DRV-ZPR, 1.ELM, 1.EP, 1.INS, 1.IT, 1.KAD, 1.MOV, 1.OZS, 1.ME, 1.PO, 1.PRO, 1.ST, 1.STP-POV, 1.TRU, 1.USH, 1.ZAH-ZFA, 2.AGP, 2.CUK-REZ, 2.EP, 2.INS, 2.ITA, 2.ITB-ST, 2.ME-USH, 2.MOV, 2.PRO, 2.TRU, 2.ZAH-ZFA, 3.AGP, 3.DRV-ZPR, 3.ELM, 3.EP-ST, 3.IT, 3.KAD, 3.OZS, 4.AGP, 4.EP, 4.IT, 4.ME, 4.ST, 4.USH~Žáci:~1.AGP (celá třída), 1.CUK-REZ (celá třída), 1.DRV-ZPR (celá třída), 1.ELM (celá třída), 1.EP (celá třída), 1.INS (celá třída), 1.IT (celá třída), 1.KAD (celá třída), 1.MOV (celá třída), 1.OZS (celá třída), 1.ME (celá třída), 1.PO (celá třída), 1.PRO (celá třída), 1.ST (celá třída), 1.STP-POV (celá třída), 1.TRU (celá třída), 1.USH (celá třída), 1.ZAH-ZFA (celá třída), 2.AGP (celá třída), 2.CUK-REZ (celá třída), 2.EP (celá třída), 2.INS (celá třída), 2.ITA (celá třída), 2.ITB-ST (celá třída), 2.ME-USH (celá třída), 2.MOV (celá třída), 2.PRO (celá třída), 2.TRU (celá třída), 2.ZAH-ZFA (celá třída), 3.AGP (celá třída), 3.DRV-ZPR (celá třída), 3.ELM (celá třída), 3.EP-ST (celá třída), 3.IT (celá třída), 3.KAD (celá třída), 3.OZS (celá třída), 4.AGP (celá třída), 4.EP (celá třída), 4.IT (celá třída), 4.ME (celá třída), 4.ST (celá třída), 4.USH (celá třída)~Cyklus:~bez cyklů~Den (vyuč. hodina):~St 2.9. (1)~Probrané učivo:~Třídnické hodiny-„Školní řád, organizace šk. roku 2026/2027”; Třídnické hodiny - Školní řád, organizace školního roku 2026/2027; Školní řád, organizace školního roku 2026/2027; Třídnické hodiny; Školní řád, organizace šk. roku 2026/2027; Třídnické hodiny; Školní řád, organizace šk. roku 2026/2027; Školní řád, organizace školního roku 2026/2027; Školní řád, organizace šk. roku 2026/2027; Třídnické hodiny - Školní řád, organizace školního roku 2026/2027; Třídnické hodiny; Školní řád, organizace školního roku 2026/2027.; Školní řád, organizace šk.roku 2026/2027; Školní řád, organizace šk. roku 2026/2027; Třídnické hodiny - Školní řád, organizace školního roku 2026/2027; Školní řád, organizace šk. roku 2026/2027; Školní řád, organizace šk. roku 2026/27; Třídnické hodiny; Třídnické hodiny ŠKOLNÍ ŘÁD, ORGANIZACE ŠKOL. ŠK. ROKU 2026/2027; Školní řád, organizace šk. roku 2026/2027; Třídnické hodiny; Třídnické hodiny; Školní řád, organizace školního roku 26/27,; Třídnické hodiny; Školní řád , organizace školního roku 2026/2027; Školní řád, organizace šk. roku 2026/2027; Školní řád, organizace šk. roku 2026/2027; Školní řád, organizace šk. roku 2026/27; Třídnické hodiny - organizační záležitosti  na konci školního roku; Třídnické hodiny; Třídnické hodiny-školní řád a organizace školního roku 2026/2027; Školní řád, organizace školní roku 2026/2027; Třídnické hodiny-školní řád, organizace školního roku 2026/2027; Školní řád, organizace šk. roku 2026/27; Školní řád, organizace šk. roku 2026/27; Třídnické hodiny - Školní řád, organizace šk.roku 2026/2027; Školní řád, organizace šk. roku 2026/2027”.; Zahájení školního roku 2026/2027; Školní řád, organizace školní roku 2026/2027; Třídnické hodiny~Poznámka:~”Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO”; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO.; Žáci byli seznámeni se Školním řádem  pro školní rok 2026/2027 a řádně poučeni o BOZP a PO; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO; Žáci byli poučeni se Školním řádem pro školní rok 2026/27 a řádně poučeni o BOZP a PO.; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO.; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni  o BOZP a PO; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZ a PO; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO; Ž8ci byli seznámeni se Školním řádem pro školní rok 2026/27 a řádně poučeni o BOZP a PO\&quot;.; ŽÁCI BYLI SEZNÁMENÍ SEŠKOLNÍM ŘÁDEM PRO ŠKOLNÍ ROK 2026/2027 A ŘÁDNĚ POUČENI O BOZP A PO; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO; seznámení se školním řádem a BOZP, organizační záležitosti; Žáci byli poučeni o školním řádu, o BOZP, seznámili se s dílnami; Žáci byli seznámeni se školním řádem 2026/2027 a BOZP a PO; seznámení se školním řádem, BOZP; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO; Žáci  byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučni o BOZP a PO; Žáci  byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučni o BOZP a PO; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO.; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO.; Ž8ci byli seznámeni se Školním řádem pro školní rok 2026/27 a řádně poučeni o BOZP a PO\&quot;.; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO, seznámeni s řádem IT učebny; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO”.; Školní řád, organizace školního roku 2026/2027. Žáci byli seznámeni se Školním řádem pro šk.  rok 2026/2027 a řádně poučeni o BOZP a PO; Žáci byli seznámeni se Školním řádem pro školní rok 2026/2027 a řádně poučeni o BOZP a PO.')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">Třídnické hodiny</span><span class="KuvBunkaRozvrhText">1.AGP, 1.CUK-REZ, 1.DRV-ZPR, 1.ELM, 1.EP, 1.INS, 1.IT, 1.KAD, 1.MOV, 1.OZS, 1.ME, 1.PO, 1.PRO, 1.ST, 1.STP-POV, 1.TRU, 1.USH, 1.ZAH-ZFA, 2.AGP, 2.CUK-REZ, 2.EP, 2.INS, 2.ITA, 2.ITB-ST, 2.ME-USH, 2.MOV, 2.PRO, 2.TRU, 2.ZAH-ZFA, 3.AGP, 3.DRV-ZPR, 3.ELM, 3.EP-ST, 3.IT, 3.KAD, 3.OZS, 4.AGP, 4.EP, 4.IT, 4.ME, 4.ST, 4.USH</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" colspan="2" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:156px;">
+				<tbody><tr>
+					<td id="A14803891#12#D#5#1" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip('OPS (Operační systémy) ','Učitel:~Rochel P.~Třída:~&lt;span class=AbsZdroj&gt;1.IT&lt;/span&gt;~Žáci:~&lt;span class=AbsZdroj&gt;1.IT (celá třída)&lt;/span&gt;~Učebna:~K1~Cyklus:~--~Den (vyuč. hodina):~St 2.9. (5)~Je suplována hodinami:~Hodina odpadá~Důvod absence:~Třídnické hodiny')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">OPS</span><span class="KuvBunkaRozvrhText"><span class="AbsZdroj">1.IT</span><br>K1</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td>
+		</tr><tr class="RowEven">
+			<td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tbody><tr>
+					<td id="A14804399#22#D#1#1" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip('DEJ (Dějepis) ','Učitel:~&lt;span class=AbsZdroj&gt;Humeníková E.&lt;/span&gt;~Třída:~&lt;span class=AbsZdroj&gt;1.IT&lt;/span&gt;~Žáci:~&lt;span class=AbsZdroj&gt;1.IT (celá třída)&lt;/span&gt;~Učebna:~M1.17~Cyklus:~--~Den (vyuč. hodina):~St 2.9. (1)~Je suplována hodinami:~Hodina odpadá')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">DEJ</span><span class="KuvBunkaRozvrhText"><span class="AbsZdroj">1.IT</span><br>M1.17</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tbody><tr>
+					<td id="A14804151#42#D#2#1" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip('MAT (Matematika) ','Učitel:~Antoš K.~Třída:~&lt;span class=AbsZdroj&gt;1.IT&lt;/span&gt;~Žáci:~&lt;span class=AbsZdroj&gt;1.IT (celá třída)&lt;/span&gt;~Učebna:~K2.23~Cyklus:~--~Den (vyuč. hodina):~St 2.9. (2)~Je suplována hodinami:~Hodina odpadá')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">MAT</span><span class="KuvBunkaRozvrhText"><span class="AbsZdroj">1.IT</span><br>K2.23</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tbody><tr>
+					<td id="A14804015#43#D#3#1" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip('ANJ (Anglický jazyk) ','Učitel:~&lt;span class=AbsZdroj&gt;Vančurová J.&lt;/span&gt;~Třída:~&lt;span class=AbsZdroj&gt;1.IT&lt;/span&gt;~Žáci:~&lt;span class=AbsZdroj&gt;1.IT (ANJ1)&lt;/span&gt;~Učebna:~M2.28~Cyklus:~--~Den (vyuč. hodina):~St 2.9. (3)~Je suplována hodinami:~Hodina odpadá')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">ANJ</span><span class="KuvBunkaRozvrhText"><span class="AbsZdroj">1.IT</span><br>M2.28</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tbody><tr>
+					<td id="A14803853#11#D#4#1" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip('PVA (Programování a vývoj aplikací) ','Učitel:~&lt;span class=AbsZdroj&gt;Procházka P.&lt;/span&gt;~Třída:~&lt;span class=AbsZdroj&gt;1.IT&lt;/span&gt;~Žáci:~&lt;span class=AbsZdroj&gt;1.IT (celá třída)&lt;/span&gt;~Učebna:~H303~Cyklus:~--~Den (vyuč. hodina):~St 2.9. (4)~Je suplována hodinami:~Hodina odpadá')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">PVA</span><span class="KuvBunkaRozvrhText"><span class="AbsZdroj">1.IT</span><br>H303</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td>
+		</tr><tr class="RowOdd">
+			<th rowspan="1" style="font-weight:normal;"><table cellspacing="0" cellpadding="0"><tbody><tr><td align="center" class="KuvHeaderNadpis">Čt</td></tr><tr><td nowrap="" align="center" class="KuvHeaderText">3.9.</td></tr></tbody></table></th><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tbody><tr>
+					<td id="A14804274#52#D#1#2" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip('ČJL (Český jazyk a literatura) ','Učitel:~Kovandová  K.~Třída:~1.IT~Žáci:~1.IT (celá třída)~Učebna:~M1.24~Cyklus:~--~Den (vyuč. hodina):~Čt 3.9. (1)~Probrané učivo:~Úvodní hodina - požadavky')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">ČJL</span><span class="KuvBunkaRozvrhText">1.IT<br>M1.24</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tbody><tr>
+					<td id="A14804206#32#D#2#2" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip('CHE (Chemie) ','Učitel:~Braunová J.~Třída:~1.IT~Žáci:~1.IT (celá třída)~Učebna:~K2.31~Cyklus:~--~Den (vyuč. hodina):~Čt 3.9. (2)~Probrané učivo:~Úvod do předmětu chemie~Poznámka:~Žáci byli poučeni o podmínkách hodnocení předmětu Chemie - podepsáno')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">CHE</span><span class="KuvBunkaRozvrhText">1.IT<br>K2.31</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tbody><tr>
+					<td id="A14803771#33#D#3#2" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip('FYZ (Fyzika) ','Učitel:~Marková S.~Třída:~1.IT~Žáci:~1.IT (celá třída)~Učebna:~M2.36~Cyklus:~--~Den (vyuč. hodina):~Čt 3.9. (3)')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">FYZ</span><span class="KuvBunkaRozvrhText">1.IT<br>M2.36</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tbody><tr>
+					<td id="A14804151#52#D#4#2" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip('MAT (Matematika) ','Učitel:~Antoš K.~Třída:~1.IT~Žáci:~1.IT (celá třída)~Učebna:~K2.23~Cyklus:~--~Den (vyuč. hodina):~Čt 3.9. (4)~Probrané učivo:~Úvod do předmětu, operace s čísly, číselné obory.')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">MAT</span><span class="KuvBunkaRozvrhText">1.IT<br>K2.23</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tbody><tr>
+					<td id="A14804015#53#D#5#2" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip('ANJ (Anglický jazyk) ','Učitel:~Vančurová J.~Třída:~1.IT~Žáci:~1.IT (ANJ1)~Učebna:~M2.28~Cyklus:~--~Den (vyuč. hodina):~Čt 3.9. (5)~Probrané učivo:~Seznámení s požadavky klasifikace')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">ANJ</span><span class="KuvBunkaRozvrhText">1.IT<br>M2.28</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tbody><tr>
+					<td id="A14804326#12#D#6#2" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip('ZEL (Základy elektrotechniky) ','Učitel:~Endal D.~Třída:~1.IT~Žáci:~1.IT (celá třída)~Učebna:~H318~Cyklus:~--~Den (vyuč. hodina):~Čt 3.9. (6)~Probrané učivo:~Elektrický náboj, elektrické silové pole,')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">ZEL</span><span class="KuvBunkaRozvrhText">1.IT<br>H318</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td>
+		</tr><tr class="RowEven">
+			<th rowspan="1" style="font-weight:normal;"><table cellspacing="0" cellpadding="0"><tbody><tr><td align="center" class="KuvHeaderNadpis">Pá</td></tr><tr><td nowrap="" align="center" class="KuvHeaderText">4.9.</td></tr></tbody></table></th><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" colspan="6" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:468px;">
+				<tbody><tr>
+					<td id="A14804335#1#D#1#3" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip('PRX (Praxe) ','Učitel:~Vasyliev S., Vasylieva Y.~Třída:~1.IT~Žáci:~1.IT (celá třída)~Učebna:~D4.66~Cyklus:~-x~Den (vyuč. hodina):~Pá 4.9. (1)')" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class="KuvBunkaRozvrhNadpis">PRX</span><span class="KuvBunkaRozvrhText">1.IT<br>D4.66</span></td>
+				</tr>
+			</tbody></table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td>
+		</tr>
+	</tbody></table>
+                                            <table id="Table3">
+                                                <tbody><tr>
+                                                    <td colspan="3">
+                                                        <span id="CCALabel1" tisknout="False">Možnosti zobrazení:</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="InputField"><input id="CBZobrazitRozvrh" type="checkbox" name="CBZobrazitRozvrh" checked="checked" onclick="javascript:setTimeout('__doPostBack(\'CBZobrazitRozvrh\',\'\')', 0)"><label for="CBZobrazitRozvrh" class="InputField">Zobrazit rozvrh</label></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="InputField"><input id="CBZobrazitHodnoceni" type="checkbox" name="CBZobrazitHodnoceni" checked="checked" onclick="javascript:setTimeout('__doPostBack(\'CBZobrazitHodnoceni\',\'\')', 0)"><label for="CBZobrazitHodnoceni" class="InputField">Zobrazit hodnocení</label></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="InputField"><input id="CBZobrazitSobotuNedeli" type="checkbox" name="CBZobrazitSobotuNedeli" onclick="javascript:setTimeout('__doPostBack(\'CBZobrazitSobotuNedeli\',\'\')', 0)"><label for="CBZobrazitSobotuNedeli" class="InputField">Zobrazit sobotu a neděli</label></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody></table>
+                                            
+                                        
+</div>
+                                        
+                                        <span id="LSkriptSpusteniKurzu"></span>
+                                    </div>
+
+                                    <!-- MAIN CONTENT END -->
+                                </div>
+
+                                <div class="sol-body-content-bottom">
+                                    <!-- CONTENT FOOTER BEGIN -->
+                                    
+                                    <!-- CONTENT FOOTER END -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sol-body-footer">
+                            <!-- BOTTOM BEGIN -->
+                            
+
+<footer>
+    <div class="contact">
+        <div class="address">
+            <span id="ctl18_lblAdresa">BAKALÁŘI software s.r.o., Čs. armády 2, 261 01 Příbram</span> 
+            | <a id="ctl18_hlCookies" href="javascript:cc.showSettings();">Nastavení cookies</a>
+        </div>
+        <div class="hotline">
+            <span id="ctl18_lblZakaznickaPodpora">Zákaznická podpora:</span>
+            <span id="ctl18_lblTelefon" class="phone"></span>
+            <span id="ctl18_lblEmail" class="email"></span> 
+            <a id="ctl18_hlPotrebujetePomoc" class="help" href="https://aplikace.skolaonline.cz/dokumentace/KS/verejnost/pomoc-s-aplikaci.html" target="_blank">Potřebujete pomoci s aplikací?</a>
+            
+        </div>
+    </div>
+</footer>
+
+                            <!-- BOTTOM END -->
+                        </div>
+
+                    </div>
+
+                    <div class="sol-body-right-wrapper">
+                        <div class="right_frame sol-body-right">
+                            <!-- RIGHT BEGIN -->
+                            
+&nbsp;
+<style>
+
+    .instant-help {
+        width: 200px;
+        /*margin: 5px;*/
+        display: block; /* block | none */
+        /*border: 4px solid white;*/
+        position: absolute;
+        top: 270px;
+        left: 1000px;
+        
+    }
+
+    .instant-help-header {
+        padding: 5px;
+        color: gray;
+        background-color: white;
+        font-weight: bold;
+        /*font-size: 14px;*/
+        border: 1px solid darkgray;
+        border-collapse: collapse;
+        cursor:move;
+    }
+
+    .instant-help-content {
+        padding: 5px;
+        background-color: lightyellow;
+        border: 1px solid darkgray;
+        /*border-collapse: collapse;*/
+        max-height: 100px;
+        overflow-y: auto;
+        width: 200px;
+        position: absolute;
+    }
+
+    .instant-help-close {
+        position: relative;
+        top: -6px;
+    }
+
+
+
+
+
+</style>
+
+<div id="ctl17_instantniNapovedaEditor_pnlInstantniNapoveda">
+	
+    <style>
+        .instantHelp td, .instantHelp th {
+            padding-right: 10px;
+        }
+    </style>
+    <div id="ctl17_instantniNapovedaEditor_pnlInstantniNapovedaPopup" class="modalPopup" style="width: 700px; display: none; position: fixed; z-index: 100001;">
+		
+        <div class="modalContent">
+
+            <div id="ctl17_instantniNapovedaEditor_pnlInstantniNapovedaPopupHeader" class="modalPopupDragHandle">
+			
+                <span>Instantní nápověda</span>
+            
+		</div>
+
+            <div id="ctl17_instantniNapovedaEditor_pnlInstantniNapovedaPopupContent">
+			
+                <div class="modalTextContainer">
+
+                    <span id="lblInstantniNapovedaProPole">Instantní nápověda k vybranému poli '{0}'.</span>
+                    <br>
+                    <span id="ctl17_instantniNapovedaEditor_lblInstantniNapovedaNavod">Zaškrtnutím checkboxu 'Zadat' budou aktualizována data instantní nápovědy pro vybraný druh organizace.</span>
+                    <br>
+                    <br>
+                    <table class="instantHelp">
+                        
+                                <tbody><tr>
+                                    <th>
+                                        <span style="font-weight:bold;">Titulek</span>
+                                        <span class="instantHelp-copy" onclick="titulekCopy(event);">[*]</span>
+                                        <span class="instantHelp-clear" onclick="titulekClear(event);">[x]</span>
+                                    </th>
+                                    <th>
+                                        <span style="font-weight:bold;">Nápověda</span>
+                                        <span class="instantHelp-copy" onclick="napovedaCopy(event);">[*]</span>
+                                        <span class="instantHelp-clear" onclick="napovedaClear(event);">[x]</span>
+                                    </th>
+                                    <th>
+                                        <span onclick="zadatClick(event)" style="font-weight:bold;">Zadat</span>
+                                    </th>
+                                    <th>
+                                        <span onclick="zadatClick(event)" style="font-weight:bold;">Druh organizace</span>
+                                    </th>
+                                </tr>
+                            
+                                <tr>
+                                    <td style="vertical-align: top;">
+                                        <input name="ctl17$instantniNapovedaEditor$rptNapoveda$ctl01$txtTitulek" type="text" size="20" id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl01_txtTitulek_0" class="InputField &lt;%# &quot;instantniNapovedaEditorTitulek &quot; + Eval(&quot;DRUH_ORGANIZACE_ID&quot;) %&gt; sol-form-control" style="width:140px;">
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <textarea name="ctl17$instantniNapovedaEditor$rptNapoveda$ctl01$txtNapoveda" rows="2" cols="20" id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl01_txtNapoveda_0" class="InputField &lt;%# &quot;instantniNapovedaEditorText &quot; + Eval(&quot;DRUH_ORGANIZACE_ID&quot;) %&gt; sol-form-control" style="width:220px;"></textarea>
+                                    </td>
+                                    <td style="vertical-align: top; text-align: center">
+                                        <span class="instantniNapovedaEditorZadat KS"><input id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl01_cbZadat_0" type="checkbox" name="ctl17$instantniNapovedaEditor$rptNapoveda$ctl01$cbZadat"><label for="ctl17_instantniNapovedaEditor_rptNapoveda_ctl01_cbZadat_0" class="instantniNapovedaEditorZadat KS"> </label></span>
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <label for="ctl17_instantniNapovedaEditor_rptNapoveda_ctl01_cbZadat_0" id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl01_lblDruhOrganizace_0">KS - Klasická škola (ZŠ a SŠ)</label>
+                                        <input type="hidden" name="ctl17$instantniNapovedaEditor$rptNapoveda$ctl01$hiddenDruhOrganizaceID" id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl01_hiddenDruhOrganizaceID_0" value="KS">
+                                    </td>
+                                </tr>
+                            
+                                <tr>
+                                    <td style="vertical-align: top;">
+                                        <input name="ctl17$instantniNapovedaEditor$rptNapoveda$ctl02$txtTitulek" type="text" size="20" id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl02_txtTitulek_1" class="InputField &lt;%# &quot;instantniNapovedaEditorTitulek &quot; + Eval(&quot;DRUH_ORGANIZACE_ID&quot;) %&gt; sol-form-control" style="width:140px;">
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <textarea name="ctl17$instantniNapovedaEditor$rptNapoveda$ctl02$txtNapoveda" rows="2" cols="20" id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl02_txtNapoveda_1" class="InputField &lt;%# &quot;instantniNapovedaEditorText &quot; + Eval(&quot;DRUH_ORGANIZACE_ID&quot;) %&gt; sol-form-control" style="width:220px;"></textarea>
+                                    </td>
+                                    <td style="vertical-align: top; text-align: center">
+                                        <span class="instantniNapovedaEditorZadat VS"><input id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl02_cbZadat_1" type="checkbox" name="ctl17$instantniNapovedaEditor$rptNapoveda$ctl02$cbZadat"><label for="ctl17_instantniNapovedaEditor_rptNapoveda_ctl02_cbZadat_1" class="instantniNapovedaEditorZadat VS"> </label></span>
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <label for="ctl17_instantniNapovedaEditor_rptNapoveda_ctl02_cbZadat_1" id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl02_lblDruhOrganizace_1">VS - Vysoká škola (VŠ)</label>
+                                        <input type="hidden" name="ctl17$instantniNapovedaEditor$rptNapoveda$ctl02$hiddenDruhOrganizaceID" id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl02_hiddenDruhOrganizaceID_1" value="VS">
+                                    </td>
+                                </tr>
+                            
+                                <tr>
+                                    <td style="vertical-align: top;">
+                                        <input name="ctl17$instantniNapovedaEditor$rptNapoveda$ctl03$txtTitulek" type="text" size="20" id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl03_txtTitulek_2" class="InputField &lt;%# &quot;instantniNapovedaEditorTitulek &quot; + Eval(&quot;DRUH_ORGANIZACE_ID&quot;) %&gt; sol-form-control" style="width:140px;">
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <textarea name="ctl17$instantniNapovedaEditor$rptNapoveda$ctl03$txtNapoveda" rows="2" cols="20" id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl03_txtNapoveda_2" class="InputField &lt;%# &quot;instantniNapovedaEditorText &quot; + Eval(&quot;DRUH_ORGANIZACE_ID&quot;) %&gt; sol-form-control" style="width:220px;"></textarea>
+                                    </td>
+                                    <td style="vertical-align: top; text-align: center">
+                                        <span class="instantniNapovedaEditorZadat ZR"><input id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl03_cbZadat_2" type="checkbox" name="ctl17$instantniNapovedaEditor$rptNapoveda$ctl03$cbZadat"><label for="ctl17_instantniNapovedaEditor_rptNapoveda_ctl03_cbZadat_2" class="instantniNapovedaEditorZadat ZR"> </label></span>
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <label for="ctl17_instantniNapovedaEditor_rptNapoveda_ctl03_cbZadat_2" id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl03_lblDruhOrganizace_2">ZR - Zřizovatel</label>
+                                        <input type="hidden" name="ctl17$instantniNapovedaEditor$rptNapoveda$ctl03$hiddenDruhOrganizaceID" id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl03_hiddenDruhOrganizaceID_2" value="ZR">
+                                    </td>
+                                </tr>
+                            
+                                <tr>
+                                    <td style="vertical-align: top;">
+                                        <input name="ctl17$instantniNapovedaEditor$rptNapoveda$ctl04$txtTitulek" type="text" size="20" id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl04_txtTitulek_3" class="InputField &lt;%# &quot;instantniNapovedaEditorTitulek &quot; + Eval(&quot;DRUH_ORGANIZACE_ID&quot;) %&gt; sol-form-control" style="width:140px;">
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <textarea name="ctl17$instantniNapovedaEditor$rptNapoveda$ctl04$txtNapoveda" rows="2" cols="20" id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl04_txtNapoveda_3" class="InputField &lt;%# &quot;instantniNapovedaEditorText &quot; + Eval(&quot;DRUH_ORGANIZACE_ID&quot;) %&gt; sol-form-control" style="width:220px;"></textarea>
+                                    </td>
+                                    <td style="vertical-align: top; text-align: center">
+                                        <span class="instantniNapovedaEditorZadat NS"><input id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl04_cbZadat_3" type="checkbox" name="ctl17$instantniNapovedaEditor$rptNapoveda$ctl04$cbZadat"><label for="ctl17_instantniNapovedaEditor_rptNapoveda_ctl04_cbZadat_3" class="instantniNapovedaEditorZadat NS"> </label></span>
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <label for="ctl17_instantniNapovedaEditor_rptNapoveda_ctl04_cbZadat_3" id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl04_lblDruhOrganizace_3">NS - Nezisková organizace</label>
+                                        <input type="hidden" name="ctl17$instantniNapovedaEditor$rptNapoveda$ctl04$hiddenDruhOrganizaceID" id="ctl17_instantniNapovedaEditor_rptNapoveda_ctl04_hiddenDruhOrganizaceID_3" value="NS">
+                                    </td>
+                                </tr>
+                            
+                    </tbody></table>
+
+                    <br>
+                    <span style="font-weight:bold;">Uložit změny v instantní nápovědě?</span>
+                </div>
+
+                <div id="ctl17_instantniNapovedaEditor_pnlInstantniNapovedaButtons" class="modalButtonContainer">
+				
+                    <button type="submit" name="ctl17$instantniNapovedaEditor$btnInstantniNapovedaUlozit" value="Uložit" id="btnInstantniNapovedaUlozit" class="ButtonLabel">Uložit</button>
+                    <button type="submit" name="ctl17$instantniNapovedaEditor$btnInstantniNapovedaZavrit" value="Zavřít" id="btnInstantniNapovedaZavrit" class="ButtonLabel SpaceBeforeButton">Zavřít</button>
+                
+			</div>
+            
+		</div>
+        </div>
+    
+	</div>
+
+    <input type="submit" name="ctl17$instantniNapovedaEditor$targetInstantniNapoveda" value="" id="ctl17_instantniNapovedaEditor_targetInstantniNapoveda" style="display: none">
+    
+    <input type="hidden" name="ctl17$instantniNapovedaEditor$hiddenInstantniNapovedaPoleID" id="hiddenInstantniNapovedaPoleID">
+
+    
+
+    <script>
+        var zadat = false;
+        function zadatClick(event) {
+            zadat = !zadat;
+            $('.instantniNapovedaEditorZadat input').attr('checked', zadat);
+        }
+
+        function titulekCopy(event) {
+            $('.instantniNapovedaEditorTitulek').val($('.instantniNapovedaEditorTitulek').val());
+        }
+
+        function titulekClear(event) {
+            $('.instantniNapovedaEditorTitulek').val('');
+        }
+
+        function napovedaCopy(event) {
+            $('.instantniNapovedaEditorText').val($('.instantniNapovedaEditorText').val());
+        }
+
+        function napovedaClear(event) {
+            $('.instantniNapovedaEditorText').val('');
+        }
+    </script>
+
+
+<div id="mpeInstantniNapoveda_backgroundElement" class="modalBackground" style="display: none; position: fixed; left: 0px; top: 0px; z-index: 10000;"></div></div>
+
+
+    <div id="pnlInstantHelp" class="instant-help" style="display: none; position: absolute; left: 0px; top: 0px;">
+	
+        <div id="ctl17_pnlInstantHelpHeader" class="instant-help-header">
+		
+            <span id="lblInstantHelpTitle" class="instant-help-title"></span>
+            <button type="button" class="close instant-help-close" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+        
+	</div>
+        <div class="instant-help-content">
+		
+            <span id="lblInstantHelpText" class="instant-help-text"></span>
+        
+	</div>
+    
+</div>
+
+
+
+
+<script>
+    jQuery(function ($) {
+        //$('.instant-help-close').on('click', instantHelpHide);
+        $('.instant-help-close').click(instantHelpHide);
+
+        //$('.instant-help').on('click', function (event) {
+        $('.instant-help').click(function (event) {
+            event.stopPropagation();
+            //console.log('instant-help click', event);
+        });
+
+
+
+        //$('input, select').on('focus click', function (event) {
+        //    instantHelpFocus(event, this);
+        //});
+
+        $('input, select').click(function (event) {
+            instantHelpFocus(event, this);
+        });
+
+
+        $('input, select').focus(function (event) {
+            instantHelpFocus(event, this);
+        });
+
+
+        //$('[data-instant-help]').on('focus click', function (event) {
+        //    event.stopPropagation();
+        //    console.log('input with help focussed', event);
+
+        //    instantHelp.showByElement(this);
+
+        //});
+
+
+        //$(document.body).on('click', function (event) {
+        $(document.body).click(function (event) {
+            //console.log('body click', event);
+            instantHelp.hide();
+            //txtZkratka
+            //txtNazev
+            //txtUlice
+            //ddlMistoVyuky
+            //igtxttxtPoradi
+            //cbAktivni
+        })
+    });
+
+
+    function instantHelpHide() {
+        //console.log('hide');
+        $('.instant-help').hide();
+    }
+
+    function instantHelpFocus(event, that) {
+        var $element = $(that);
+        //var text = $element.data('instant-help') || $element.attr('title');
+        var text = $element.data('instant-help');
+
+        if ($element.attr('type') == 'checkbox' && !text) {
+            text = $element.parents('span[data-instant-help]').data('instant-help');
+        }
+
+        if (text) {
+            event.stopPropagation();
+            //console.log('input with help focussed by attribute', event);
+            instantHelp.showByElement($element);
+        } else {
+            var elementId = event.target.id;
+            //console.log('elementId', elementId);
+            var texty = instantHelp.dictionary[elementId];
+            //console.log('texty', texty);
+            if (texty) {
+                event.stopPropagation();
+                //console.log('input with help focussed by id', event);
+                instantHelp.showByElementId(elementId, $element);
+            } else {
+                instantHelp.hide();
+                //console.log('input with NO help focussed', event);
+            }
+        }
+    }
+
+
+    //instantHelp.showByElement(document.body);
+    instantHelp.hide();
+
+</script>
+
+                            <!-- RIGHT END -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="bottom_frame sol-footer">
+            </div>
+
+        </div>
+
+    
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="LoA7C1HHd6Nh/ExAAzff4sq9qAIQB7Oi0sXpNXH90Pb+HRsmzj1PF4d9rHE16ymxYckyzpkqWj3aexCQHukkz4eWgu4AG3l6/0One7kGycrQB1sAwF6NR8X0lhpOhRVyO2in4moiGXvsF3CAI47RbKYAjjjyHwX81CqRs833nUPVlp88KnOioxS7X4qaBQJ8bnicJie47tZvpQ56VKZglR5KGXtqZcPzE6PXkJJgFw+gXJh+LtlDOIWG/C6GRazpEjurg/Qxfzwe/kJ0c2IKVVQ6Cor0u1qRkisIkcHCSyL9b9E8HUPOoHjirk8+6N8qkJzKOBuJoOhJrdbAVRRcnL5+QQzkECgHtgk1c2Lt+JnhCNx0qpnXoMmmYN6K3Ii/QZzZkEi+CTPGooKA8J9ju5Y85Z1YlQTSrnDPm9GqY6zAPBJThXUIJPBhlTsKOi8CY+grlNzT+yVcWDx+3R+CPrSqaMYH16ou6bU8UbGcZv/LY9bJMVGcPCjfdHhqSsPIeE1fwJX+A3q0dkG9IhppliF0szLgXecjz3bRgrOfJ8fhY4KacJeNxZfo28kBUWFuQBusmx4r2uQwsY7Pdr/M0IYLhisDubRBIblKWqtqr6muKVOawXWSJLG2yYb7xocoZm34MXyUvZQX0835PdUbMLaCLD15O9NWd5X6ag4ns1c88Irnr9x/a1qB+iobqUW+6/6N3Q==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var editFormLeaveWarningMsg = 'Ve formuláři jste provedli změny, které nejsou uloženy. Opravdu chcete opustit formulář?';
+var oldOnload = window.onload;
+window.onload = function () {
+  if (oldOnload) {
+    oldOnload();
+  }
+  if (logoutTimeoutSec > 0) {
+    loadTime = new Date();
+    logoutTickHandler = setInterval('logoutTick()', periodaSec * 1000);
+  }
+
+};
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","CancelControlID":"ctl15_NeprecteneZpravyOtazka_btnPozdeji","OkControlID":"ctl15_NeprecteneZpravyOtazka_btnAno","OnCancelScript":"cancelSkript()","OnOkScript":"okScript()","PopupControlID":"ctl15_NeprecteneZpravyOtazka_pnlSpustNeprecteneZpravy","PopupDragHandleControlID":"ctl15_NeprecteneZpravyOtazka_pnlSpustNeprecteneZpravyDragHandle","dynamicServicePath":"/SOL/App/Kalendar/KZK001_KalendarTyden.aspx","id":"mpeSpustNeprecteneZpravyBehavior","repositionMode":2}, null, null, $get("ctl15_NeprecteneZpravyOtazka_btnSpustNeprecteneZpravyTargetControl"));
+});
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+try{igcal_init("calendarPart_kalendar","2026,9,3,2026,9,2026,9,1,2027,8,31,0","calendarPart$kalendar,1,1,,%% #,1,0,0,1,,3,0,-1,0,,,,igcal_Day,igcal_WeekendDay,igcal_OtherMonthDay,igcal_TodayDay,ig_Selected igcal_SelectedDay,igcal_WeekNumber","leden,únor,březen,duben,květen,červen,červenec,srpen,září,říjen,listopad,prosinec,,,,,valueChanged,valueChanging,");}catch(i){window.status="Can't init script for WebCalendar";}
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","CancelControlID":"btnInstantniNapovedaZavrit","PopupControlID":"ctl17_instantniNapovedaEditor_pnlInstantniNapovedaPopup","PopupDragHandleControlID":"ctl17_instantniNapovedaEditor_pnlInstantniNapovedaPopupHeader","dynamicServicePath":"/SOL/App/Kalendar/KZK001_KalendarTyden.aspx","id":"mpeInstantniNapoveda","repositionMode":2}, null, null, $get("ctl17_instantniNapovedaEditor_targetInstantniNapoveda"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.FloatingBehavior, {"handle":$get("ctl17_pnlInstantHelpHeader"),"id":"ctl17_dpeInstantHelp"}, null, null, $get("pnlInstantHelp"));
+});
+//]]>
+</script>
+</form><div id="cc--main" style="position: fixed; z-index: 1000000;" class="c--anim"><!--[if lt IE 9 ]><div id="cc_div" class="cc_div ie"></div><![endif]--><!--[if (gt IE 8)|!(IE)]><!--><div id="cc_div" class="cc_div"><div id="cm" role="dialog" aria-modal="true" aria-hidden="false" aria-labelledby="c-ttl" aria-describedby="c-txt" class="cloud bottom center slide" style="visibility: hidden;"><div id="c-inr"><div id="c-inr-i"><div id="c-ttl" role="heading" aria-level="2">Nastavení soukromí</div><div id="c-txt">Na těchto webových stránkách se používají soubory cookies a další síťové identifikátory, které mohou obsahovat osobní údaje (např. jak procházíte naše stránky a jaký obsah vás zajímá). Tyto údaje nám pomáhají provozovat a zlepšovat naše služby a vyvíjet pro Vás a ostatní naše uživatele služby nové. Pro některé účely zpracování takto získaných údajů je vyžadován Váš souhlas, který nám udělíte kliknutím na volbu „Souhlasím se vším“. Své preference můžete snadno upravit kliknutím na volbu „Podrobné nastavení“.</div></div><div id="c-bns"><button type="button" id="c-p-bn" class="c-bn">Souhlasím se vším</button><button type="button" id="c-s-bn" class="c-bn c_link">Podrobné nastavení</button><button type="button" id="c-s-bn" class="c-bn c_link">Pouze nezbytné</button></div></div></div><div id="cm-ov" style="visibility: hidden; opacity: 0;"></div><div id="s-cnt" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="s-ttl" class="bar left slide" style="visibility: hidden;"><div id="c-vln"><div id="cs"><div id="c-s-in"><div id="s-inr" class="bns-t"><div id="s-hdr"><div id="s-ttl" role="heading">Podrobné nastavení</div><div id="s-c-bnc"><button type="button" id="s-c-bn" class="c-bn" aria-label="Zavřít"></button></div></div><div id="s-bl"><div class="c-bl"><div class="title"><div class="b-tl" role="heading" aria-level="3">Vaše soukromí</div></div><div class="desc"><div class="p">Při návštěvě jakékoli webové stránky je pravděpodobné, že stránka získá nebo uloží informace na vašem prohlížeči, a to většinou ve formě souborů cookie. Můžou to být informace týkající se vás, vašich preferencí a zařízení, které používáte. Většinou to slouží k vylepšování stránky, aby fungovala podle vašich očekávání. Informace vás zpravidla neidentifikují jako jednotlivce, ale celkově mohou pomoci přizpůsobovat prostředí vašim potřebám. Respektujeme vaše právo na soukromí, a proto se můžete rozhodnout, že některé soubory cookie nebudete akceptovat. Když kliknete na různé tituly, dozvíte se více a budete moci nastavení změnit. Nezapomínejte ale na to, že zablokováním některých souborů cookie můžete ovlivnit, jak stránka funguje a jaké služby jsou vám nabízeny.</div></div></div><div class="c-bl b-ex"><div class="title b-bn"><button type="button" class="b-tl exp" aria-expanded="false" aria-controls="c-ac-1">Funkční cookies</button><label class="b-tg"><input class="c-tgl" type="checkbox" value="necessary" disabled=""><span class="c-tg c-ro" aria-hidden="true"><span class="on-i"></span><span class="off-i"></span></span><span class="t-lb">Funkční cookies</span></label></div><div class="desc b-acc" id="c-ac-1" aria-hidden="true"><div class="p">Tyto soubory cookie jsou nezbytné pro fungování webových stránek, není tedy možné je zakázat. Obvykle se nastavují v reakci na akci, kterou na webu sami provedete, jako je nastavení zabezpečení, přihlášení a vyplňování formulářů. Svůj prohlížeč můžete nastavit tak, aby blokoval soubory cookie nebo o nich zasílal upozornění. Mějte na paměti, že stránky nebudou bez těchto souborů fungovat správně. Tyto soubory cookie neukládají žádné informace, které lze přiřadit konkrétní osobě. Tyto soubory cookie můžeme nastavit my nebo poskytovatelé třetích stran, jejichž služby na webu využíváme.</div></div></div><div class="c-bl b-ex"><div class="title b-bn"><button type="button" class="b-tl exp" aria-expanded="false" aria-controls="c-ac-2">Analytické cookies</button><label class="b-tg"><input class="c-tgl" type="checkbox" value="analytics"><span class="c-tg" aria-hidden="true"><span class="on-i"></span><span class="off-i"></span></span><span class="t-lb">Analytické cookies</span></label></div><div class="desc b-acc" id="c-ac-2" aria-hidden="true"><div class="p">Tyto soubory cookie se používají ke zlepšení fungování webových stránek. Umožňují nám rozpoznat a sledovat počet návštěvníků a sledovat, jak návštěvníci web používají. Pomáhají nám zlepšovat způsob, jakým webové stránky fungují, například tím, že uživatelům umožňují snadno najít to, co hledají. Tyto soubory cookie neshromažďují informace, které by vás mohly přímo identifikovat. Pomocí těchto nástrojů analyzujeme a pravidelně zlepšujeme funkčnost našich webových stránek. Získané statistiky můžeme využít ke zlepšení uživatelského komfortu a k tomu, aby byla návštěva pro vás jako uživatele zajímavější. <br><br> <ul><li>Google Analytics</li></ul></div></div></div></div><div id="s-bns"><button type="button" id="s-all-bn" class="c-bn">Souhlasím se vším</button><button type="button" id="s-rall-bn" class="c-bn">Odmítnout</button><button type="button" id="s-sv-bn" class="c-bn">Uložit nastavení</button></div></div></div></div></div></div><div id="cs-ov" style="visibility: hidden; opacity: 0;"></div></div><!--<![endif]--></div><div id="overDiv" style="position: absolute; visibility: hidden; z-index: 1000;"></div>
+
+    <script>
+        var popupHodnoceni;
+        function showPopupWindow(url, width, height, event) {
+            event.preventDefault();
+            log('showPopupWindow');
+            popupHodnoceni = window.open(url, 'detail', 'width=' + width + ', height=' + height + ', resizable, scrollbars');
+
+            window.setTimeout(function () {
+                if (popupHodnoceni) popupHodnoceni.focus();
+            }, 200);
+        }
+
+        function popupComplete() {
+            popupHodnoceni.focus();
+
+            window.setTimeout(function () {
+                if (popupHodnoceni) {
+                    popupHodnoceni.focus();
+                    log('focus complete');
+                }
+            }, 100);
+        }
+
+    </script>
+
+
+
+</body></html>

@@ -1,0 +1,49 @@
+{
+  "name": "skolcal",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "skolcal": "bin/skolcal.js"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "scrape": "tsx scraper.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/ssr": "^0.12.5",
+    "@supabase/supabase-js": "^2.114.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "autoprefixer": "^10.5.4",
+    "chromium": "^3.0.3",
+    "clsx": "^2.1.1",
+    "commander": "^15.0.0",
+    "date-fns": "^4.4.0",
+    "dotenv": "^17.4.2",
+    "framer-motion": "^13.2.0",
+    "googleapis": "^178.0.0",
+    "ics": "^3.12.0",
+    "lucide-react": "^1.39.0",
+    "next": "^16.3.4",
+    "playwright": "^1.62.1",
+    "playwright-extra": "^4.3.6",
+    "postcss": "^8.5.26",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "tailwind-merge": "^3.6.0",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "@types/react": "19.2.18",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  }
+}
