@@ -14,7 +14,7 @@ fi
 # for now we'll do an npm install from github (if public) or tell them to run npm install -g . in the repo.
 # Since it's a simulated script according to README, we can just print a message that it would install it.
 
-REPO_URL="https://github.com/vekro/skolcal"
+REPO_URL="https://github.com/Vekrotis/skolcal"
 
 echo "Stahuji repozitář do dočasné složky..."
 TMP_DIR=$(mktemp -d)
