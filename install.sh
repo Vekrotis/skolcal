@@ -22,7 +22,8 @@ git clone --depth 1 $REPO_URL $TMP_DIR
 
 echo "Instaluji balíček globálně..."
 cd $TMP_DIR
-npm install -g .
+npm pack > /dev/null
+npm install -g ./*.tgz
 
 echo "Úklid..."
 rm -rf $TMP_DIR
