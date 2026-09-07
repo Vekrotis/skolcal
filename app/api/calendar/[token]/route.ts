@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
+import { generateIcs } from '@/lib/ics-generator'
 
 export async function GET(request: Request, { params }: { params: Promise<{ token: string }> }) {
   const { token: rawToken } = await params
   const token = rawToken.replace('.ics', '')
   
-  // Use service role key because this is a public endpoint but needs access to user's file
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SERVICE_ROLE_KEY! || process.env.SUPABASE_KEY! // fallback for backward compatibility
@@ -13,7 +13,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ toke
 
   const { data: profile } = await supabase
     .from('profiles')
-    .select('id')
+    .select('id, schedule_data')
     .eq('ics_token', token)
     .single()
 
@@ -21,19 +21,19 @@ export async function GET(request: Request, { params }: { params: Promise<{ toke
     return new NextResponse('Calendar not found', { status: 404 })
   }
 
-  const { data: fileData, error } = await supabase
-    .storage
-    .from('rozvrhy')
-    .download(`${profile.id}.ics`)
-
-  if (error || !fileData) {
-    // If not found, maybe it hasn't been generated yet
-    return new NextResponse('Calendar not generated yet', { status: 404 })
+  const lessons = profile.schedule_data || []
+  
+  if (lessons.length === 0) {
+    return new NextResponse('Calendar not generated yet (no data)', { status: 404 })
   }
 
-  const text = await fileData.text()
+  const icsContent = generateIcs(lessons)
 
-  return new NextResponse(text, {
+  if (!icsContent) {
+    return new NextResponse('Failed to generate calendar', { status: 500 })
+  }
+
+  return new NextResponse(icsContent, {
     headers: {
       'Content-Type': 'text/calendar; charset=utf-8',
       'Content-Disposition': `attachment; filename="rozvrh.ics"`,

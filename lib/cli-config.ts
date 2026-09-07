@@ -32,3 +32,19 @@ export function saveConfig(config: CliConfig) {
         console.error('Nepodařilo se uložit konfiguraci:', e);
     }
 }
+
+export function deleteConfig(): boolean {
+    try {
+        if (fs.existsSync(CONFIG_PATH)) {
+            fs.unlinkSync(CONFIG_PATH);
+            return true;
+        }
+    } catch (e) {
+        console.error('Nepodařilo se smazat konfiguraci:', e);
+    }
+    return false;
+}
+
+export function getConfigPath(): string {
+    return CONFIG_PATH;
+}

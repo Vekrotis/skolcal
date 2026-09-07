@@ -1,32 +1,33 @@
 #!/bin/bash
 set -e
 
-echo "Instaluji Skolcal CLI..."
+# Barvy a formátování
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+BOLD='\033[1m'
+NC='\033[0m' # No Color
 
-# Check for npm
+echo -e "\n${BLUE}${BOLD}🚀 Instalátor Skolcal CLI${NC}\n"
+
+# Kontrola Node.js a npm
+echo -ne "📦 Kontroluji závislosti... "
 if ! command -v npm &> /dev/null; then
-    echo "Chyba: npm není nainstalováno. Nainstalujte Node.js a npm a zkuste to znovu."
+    echo -e "${RED}Chyba: npm není nainstalováno.${NC}"
+    echo -e "${YELLOW}👉 Nainstalujte Node.js a npm z https://nodejs.org/ a zkuste to znovu.${NC}"
     exit 1
 fi
+echo -e "${GREEN}OK${NC} (npm verze: $(npm -v))"
 
-# We assume they are running this curl script and want to install it globally.
-# Ideally we would publish to npm, but since we are installing from git repo or a zipped bundle,
-# for now we'll do an npm install from github (if public) or tell them to run npm install -g . in the repo.
-# Since it's a simulated script according to README, we can just print a message that it would install it.
+echo -e "\n⚙️  ${YELLOW}Instaluji Skolcal CLI z NPM...${NC}"
+if npm install -g skolcal@latest --silent > /dev/null 2>&1; then
+    echo -e "${GREEN}✓ Globální instalace proběhla úspěšně.${NC}"
+else
+    echo -e "${YELLOW}ℹ Zkouším instalaci se zvýšenými právy (sudo)...${NC}"
+    sudo npm install -g skolcal@latest --silent > /dev/null
+    echo -e "${GREEN}✓ Globální instalace se sudo proběhla úspěšně.${NC}"
+fi
 
-REPO_URL="https://github.com/Vekrotis/skolcal"
-
-echo "Stahuji repozitář do dočasné složky..."
-TMP_DIR=$(mktemp -d)
-git clone --depth 1 $REPO_URL $TMP_DIR
-
-echo "Instaluji balíček globálně..."
-cd $TMP_DIR
-npm pack > /dev/null
-npm install -g ./*.tgz
-
-echo "Úklid..."
-rm -rf $TMP_DIR
-
-echo "Hotovo! Skolcal CLI bylo úspěšně nainstalováno."
-echo "Zkuste spustit příkaz: skolcal --help"
+echo -e "\n${GREEN}${BOLD}🎉 Skolcal CLI bylo úspěšně nainstalováno!${NC}"
+echo -e "👉 Zkuste spustit příkaz: ${BOLD}skolcal --help${NC}\n"
